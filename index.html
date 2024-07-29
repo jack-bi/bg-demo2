@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>BG demo4</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./scss.css">
+  <!-- <link rel="stylesheet" href="http://www.5imoban.net/download/swiper/swiper-4.0.5.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- 引入 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- 引入 fullPage.js CSS 樣式 -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/jquery.fullPage.min.css" />
+  <!-- 引入 fullPage.js JavaScript 檔案 -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/jquery.fullPage.min.js">
+  </script>
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <script src="js/swiper.min.js"></script>
+  <!-- <script src="js/swiper.min.js"></script> -->
+  <style>
+    .custom-slow {
+      animation-duration: 2.62s;
+      /* 自定义持续时间，可以根据需要调整 */
+    }
+
+    :root {
+      --animate-delay-5: .3s;
+      --animate-delay-7: .4s;
+      --animate-delay-8: .5s;
+      --animate-delay-9: .7s;
+
+      --animate-delay-10: 1s;
+    }
+
+    .delay5 {
+      animation-delay: var(--animate-delay-5)
+    }
+
+    .delay7 {
+      animation-delay: var(--animate-delay-7)
+    }
+
+    .delay8 {
+      animation-delay: var(--animate-delay-8)
+    }
+
+    .delay9 {
+      animation-delay: var(--animate-delay-9)
+    }
+
+    .delay10 {
+      animation-delay: var(--animate-delay-10)
+    }
+  </style>
+</head>
+
+<body>
+  <header id="Header" class="one">
+    <div class="bglogo"><a href=""></a></div>
+    <div class="rBlock">
+      <ul class="headerNav">
+        <li class="item active">
+          <p>HOME</p>
+        </li>
+        <li class="add item">
+          <p>ABOUT</p>
+          <ul class="navItem">
+            <li>COMPANY</li>
+            <li>ADVANTAGES</li>
+            <li>PARTNERS</li>
+          </ul>
+        </li>
+        <li class="add item">
+          <p>SERVICES</p>
+          <ul class="navItem">
+            <li>WHITE LABLE</li>
+            <li>API</li>
+          </ul>
+        </li>
+        <li class="add item">
+          <p>GAMES</p>
+          <ul class="navItem">
+            <li>LIVE CASINO</li>
+            <li>POKER</li>
+            <li>GALAXY TREASURE</li>
+            <li>FISHING</li>
+            <li>SLOTS</li>
+          </ul>
+        </li>
+        <li class="add item">
+          <p>NEWS</p>
+          <ul class="navItem">
+            <li>EVENTS</li>
+            <li>ARTICLE</li>
+          </ul>
+        </li>
+        <li class="item">
+          <p>CONTACT US</p>
+        </li>
+      </ul>
+      <div class="seachBlock close">
+        <div>
+         <input type="text" placeholder="SEARCH">
+         <div>GO</div>
+        </div>
+        <i class="bi bi-search"></i>
+      </div>
+      <div class="lang add">
+        <span>EN</span>
+        <ul class="langMain">
+          <li data-type="lang" class="zh">
+            <img src="./img/flag/zh.png">
+            <span data-type="lang" data-id="zh">CH</span>
+          </li>
+          <li data-type="lang" class="en">
+            <img src="./img/flag/en.png">
+            <span data-type="lang" data-id="en">EN</span>
+          </li>
+          <li data-type="lang" class="vn">
+            <img src="./img/flag/vn.png">
+            <span data-type="lang" data-id="vn">VN</span>
+          </li>
+          <li data-type="lang" class="th">
+            <img src="./img/flag/th.png">
+            <span data-type="lang" data-id="th">TH</span>
+          </li>
+          <li data-type="lang" class="kr">
+            <img src="./img/flag/kr.png">
+            <span data-type="lang" data-id="kr">KO</span>
+          </li>
+          <li data-type="lang" class="jp">
+            <img src="./img/flag/jp.png">
+            <span data-type="lang" data-id="jp">JA</span>
+          </li>
+          <li data-type="lang" class="pt">
+            <img src="./img/flag/pt.png">
+            <span data-type="lang" data-id="pt">PT</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="clint">
+      <div class="space"></div>
+    </div>
+  </header>
+  <section class="one" id="onBlock">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide a">
+          <p> &nbsp;A LEADING GAMING <br /> BIG GAMING</p>
+          <video src="https://www.caraful.co.jp/wp-content/themes/cl-caraful/assets/images/mvMovie.mp4" preload="none"
+            autoplay="" muted="" playsinline="" loop=""></video>
+        </div>
+        <div class="swiper-slide b">
+          <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="model">
+            <canvas id="c"></canvas>
+            <div class="g-container-circle">
+              <div class="g-circle"></div>
+            </div>
+            <div class="g-container">
+              <div class="g-triangle"></div>
+            </div>
+            <div class="plate"></div>
+            <div class="girl"></div>
+            <div class="stand"></div>
+            <div class="Sic">
+              <div class="sic1"></div>
+              <div class="sic2"></div>
+            </div>
+          </div>
+          <div class="bannerText">
+            <p>-LET'S MEET AT-</p>
+            <div class="sigma"></div>
+            <p>14-16 NOV, 2023 <br />MALTA,MMH</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="scroollBtn"></div>
+  </section>
+  <section class="five" id="fiBlock">
+    <div class="fiveBack">
+      <div class="dot"></div>
+    </div>
+    <p class="title">NEWS</p>
+    <div class="Block animate__animated">
+      <div class="next">
+        <img src="./img/arrow_left.png" alt="">
+      </div>
+      <div id="certify">
+        <div class="carousel">
+          <div class="item a">
+            <div class="textBox">
+              <div class="itime">Nov 16, 2023</div>
+              <div class="ititle">Global White-label<br/>Limited-time Package</div>
+            </div>
+            <div class="darkbg"></div> 
+          </div>
+          <div class="item b">
+            <div class="textBox">
+              <div class="itime">Nov 16, 2023</div>
+              <div class="ititle">Big Gaming<br/>See You at SiGMA</div>
+            </div>
+            <div class="darkbg"></div>
+          </div>
+          <div class="item c">
+            <div class="textBox">
+              <div class="itime">Nov 16, 2023</div>
+              <div class="ititle">Big Gaming<br/>New Studio</div>
+            </div>
+            <div class="darkbg"></div>
+          </div>
+          <div class="item d">
+            <div class="textBox">
+              <div class="itime">Nov 16, 2023</div>
+              <div class="ititle">Global White-label<br/>Limited-time Package</div>
+            </div>
+            <div class="darkbg"></div>
+          </div>
+          <div class="item e">
+            <div class="textBox">
+              <div class="itime">Nov 16, 2023</div>
+              <div class="ititle">Big Gaming<br/>See You at SiGMA</div>
+            </div>
+            <div class="darkbg"></div>
+          </div>
+          <div class="item f">
+            <div class="textBox">
+              <div class="itime">Nov 16, 2023</div>
+              <div class="ititle">Big Gaming<br/>New Studio</div>
+            </div>
+              <div class="darkbg"></div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div>
+          <div class="date">Nov 16, 2023</div>
+          <div class="title">Global White-label
+            Limited-time Package</div>
+          <p>Free off Service Charge for 3 Months!
+            2023 • Limited-time bonuses for opening casinos
+            The leader in Asia • Quickest site set-up • Most stable profits</p>
+          <div class="more">MORE</div>
+        </div>
+        <div>
+          <div class="date">Nov 16, 2023</div>
+          <div class="title">Big Gaming
+            See You at SiGMA
+            Europe - Malta!</div>
+          <p>Big Gaming provides you a one-stop solution for your white label needs; whether you are looking for Poker
+            games, Global, or composite white-label services, we have it all! Big Gaming has natures for different
+            target audiences.</p>
+          <div class="more">MORE</div>
+        </div>
+        <div>
+          <div class="date">Nov 16, 2023</div>
+          <div class="title">BIG GAMING New Studio</div>
+          <p>New Studio Grand Debut
+            The latest Big Gaming product news release</p>
+          <div class="more">MORE</div>
+        </div>
+        <div>
+          <div class="date">Nov 16, 2023</div>
+          <div class="title">Global White-label
+            Limited-time Package</div>
+          <p>Free off Service Charge for 3 Months!
+            2023 • Limited-time bonuses for opening casinos
+            The leader in Asia • Quickest site set-up • Most stable profits</p>
+          <div class="more">MORE</div>
+        </div>
+        <div>
+          <div class="date">Nov 16, 2023</div>
+          <div class="title">Big Gaming
+            See You at SiGMA
+            Europe - Malta!</div>
+          <p>Big Gaming provides you a one-stop solution for your white label needs; whether you are looking for Poker
+            games, Global, or composite white-label services, we have it all! Big Gaming has natures for different
+            target audiences.</p>
+          <div class="more">MORE</div>
+        </div>
+        <div>
+          <div class="date">Nov 16, 2023</div>
+          <div class="title">BIG GAMING New Studio</div>
+          <p>New Studio Grand Debut
+            The latest Big Gaming product news release</p>
+          <div class="more">MORE</div>
+        </div>
+      </div>
+      <div class="prev">
+        <img src="./img/arrow_right.png" alt="">
+      </div>
+    </div>
+  </section>
+  
+  <section class="the" id="thBlock">
+    <div class="thrBack">
+      <div class="dot"></div>
+      <div class="MainBackLeft animate__animated">
+        <div class="title"></div>
+        <div class="fish1"></div>
+        <div class="sic1"></div>
+        <div class="sic2"></div>
+      </div>
+      <div class="shadow"></div>
+      <div class="MainBackRight animate__animated">
+        <div class="title"></div>
+        <div class="lilguy"></div>
+        <div class="sic"></div>
+        <div class="fish1"></div>
+      </div>
+    </div>
+  </section>
+  <section class="four" id="fuBlock">
+    <div class="furBack">
+      <div class="dot"></div>
+      <div class="red"></div>
+    </div>
+    <div class="Block swiper mySwiper2">
+      <p class="title">OUR GAMES</p>
+      <!-- <div class=""> -->
+        <div class="gamesBtn swiper-wrapper">
+          <div class="animate__animated delay5 swiper-slide">
+              <div class="btn-1 gamesBtnItem ">
+                <div class="item">
+                  <div class="poke1"></div>
+                  <div class="girl"></div>
+                  <div class="poke2"></div>
+                  <div class="sic1"></div>
+                  <div class="sic2"></div>
+                </div>
+                <div class="mask">BG <br /> Live Casino<span>MORE</span></div>
+            </div>
+          </div> 
+          <div class="animate__animated delay9 swiper-slide">
+            <div class="btn-2 gamesBtnItem">
+              <div class="item">
+                <div class="ring"></div>
+                <div class="point"></div>
+                <div class="girl"></div>
+                <div class="con1"></div>
+                <div class="con2"></div>
+              </div>
+              <div class="mask">BG <br /> Poker<span>MORE</span></div>
+            </div>
+          </div>
+          <div class="animate__animated delay7 swiper-slide">
+            <div class="btn-3 gamesBtnItem">
+              <div class="item">
+                <div class="mon1"></div>
+                <div class="mon2"></div>
+                <div class="mon3"></div>
+              </div>
+              <div class="mask">BG <br /> Galaxy Treasure<span>MORE</span></div>
+            </div>
+          </div>
+          <div class="animate__animated delay8 swiper-slide">
+            <div class="btn-4 gamesBtnItem">
+              <div class="item">
+                <div class="drg"></div>
+                <div class="old"></div>
+                <div class="yun"></div>
+              </div>
+              <div class="mask">BG <br /> Daisen Fishing<span>MORE</span></div>
+            </div>
+          </div>
+          <div class="animate__animated delay10 swiper-slide">
+            <div class="btn-5 gamesBtnItem">
+              <div class="item">
+                <div class="sea1"></div>
+                <div class="sea2"></div>
+                <div class="sea3"></div>
+                <div class="sea4"></div>
+              </div>
+              <div class="mask">BG <br /> Fishing Master<span>MORE</span></div>
+            </div>
+          </div>
+        
+        </div>
+      <!-- </div> -->
+      <div class="moreBtn">MORE</div>
+      <div class="NPbut">
+        <div class="PRE games-prev"><img src="./img/arrow_left.png" alt=""></div>
+        <div class="NEX games-next"><img src="./img/arrow_right.png" alt=""></div>
+      </div>
+    </div>
+  </section>
+  <section class="two" id="twBlock">
+    <div class="lightPoint">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+   </div>
+    <div class="bottom">
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div class="bigBG animate__animated custom-slow"></div>
+    <div class="kuang">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+    <div class="Block">
+      <p class="title">OUR ADVANTAGE</p>
+      <div class="ourMain">
+        <div class="animate__animated L a">
+          <p class="o-1">24/7 ON DUTY ALL YEAR</p>
+          <p>24/7 round-the-clock technical support</p>
+        </div>
+        <div class="animate__animated R b">
+          <p class="o-2">PREMIUM BACK-END</p>
+          <p>management system Enhanced business efficiency</p>
+        </div>
+        <div class="animate__animated L c">
+          <p class="o-3">INTERNATIONAL CERTIFICATION</p>
+          <p>Official certificationlicenses Highest Standards</p>
+        </div>
+        <div class="animate__animated R d">
+          <p class="o-4">API SUPPORT</p>
+          <p>Multilingual and multiple currency support</p>
+        </div>
+        <div class="animate__animated L e">
+          <p class="o-5">COMPREHENSIVE WHITE-LABEL<br> SERVICE CLIENTS CAN BE<br> EQUIPPED WITH EASE</p>
+          <p>Supports iOS, Android, Windows, and HTML5 Relish in the original, classic, and all-round entertainment
+            feast</p>
+        </div>
+        <div class="animate__animated R f">
+          <p class="o-6">UNIVERSAL WALLET <br> NATIVE-APP <br> ANTI-HIJACKING FEATURES</p>
+          <p>With the professional and exclusive big data analysis system, we regularly track and accurately analyze
+            market trends and players' behaviors comprehensively</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <div class="LogoScroll">
+      <div class="LogoBox">
+        <ul class="foBox">
+          <li class="footerLogo m1"></li>
+          <li class="footerLogo m2"></li>
+          <li class="footerLogo m3"></li>
+          <li class="footerLogo m4"></li>
+          <li class="footerLogo m5"></li>
+          <li class="footerLogo m6"></li>
+          <li class="footerLogo m7"></li>
+          <li class="footerLogo m8"></li>
+          <li class="footerLogo m9"></li>
+          <li class="footerLogo m10"></li>
+          <li class="footerLogo m11"></li>
+          <li class="footerLogo m12"></li>
+          <li class="footerLogo m13"></li>
+          <li class="footerLogo m14"></li>
+          <li class="footerLogo m15"></li>
+          <li class="footerLogo m16"></li>
+          <li class="footerLogo m17"></li>
+          <li class="footerLogo m18"></li>
+          <li class="footerLogo m19"></li>
+          <li class="footerLogo m20"></li>
+          <li class="footerLogo m21"></li>
+          <li class="footerLogo m22"></li>
+          <li class="footerLogo m23"></li>
+          <li class="footerLogo m24"></li>
+          <li class="footerLogo m25"></li>
+          <li class="footerLogo m26"></li>
+          <li class="footerLogo m27"></li>
+          <li class="footerLogo m28"></li>
+          <li class="footerLogo m29"></li>
+          <li class="footerLogo m1"></li>
+          <li class="footerLogo m2"></li>
+          <li class="footerLogo m3"></li>
+          <li class="footerLogo m4"></li>
+          <li class="footerLogo m5"></li>
+          <li class="footerLogo m6"></li>
+          <li class="footerLogo m7"></li>
+          <li class="footerLogo m8"></li>
+          <li class="footerLogo m9"></li>
+          <li class="footerLogo m10"></li>
+          <li class="footerLogo m11"></li>
+          <li class="footerLogo m12"></li>
+          <li class="footerLogo m13"></li>
+          <li class="footerLogo m14"></li>
+          <li class="footerLogo m15"></li>
+          <li class="footerLogo m16"></li>
+          <li class="footerLogo m17"></li>
+          <li class="footerLogo m18"></li>
+          <li class="footerLogo m19"></li>
+          <li class="footerLogo m20"></li>
+          <li class="footerLogo m21"></li>
+          <li class="footerLogo m22"></li>
+          <li class="footerLogo m23"></li>
+          <li class="footerLogo m24"></li>
+          <li class="footerLogo m25"></li>
+          <li class="footerLogo m26"></li>
+          <li class="footerLogo m27"></li>
+          <li class="footerLogo m28"></li>
+          <li class="footerLogo m29"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footerBlock">
+      <div class="bgBlock">
+        <div class="onBlock">
+          <a href="#" class="bglogo"></a>
+          <div>
+            <p class="whatsApps">whatsApp：+63 956 339 7666</p>
+            <p class="email">email：sales@biggaming.cc</p>
+          </div>
+          <a href="" class="try">Terms and Policy</a>
+        </div>
+        <div class="twBlock">
+          <ul class="footerNav">
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>SERVICES</li>
+            <li>GAMES</li>
+            <li>NEWS</li>
+            <li>COMTACT US</li>
+          </ul>
+          <div class="media">
+            <div class="youku"><img src="./img/footer/in.png" alt=""></div>
+            <div class="weibo"><img src="./img/footer/fb.png" alt=""></div>
+            <div class="fb"><img src="./img/footer/twitter.png" alt=""></div>
+            <div class="yt"><img src="./img/footer/ig.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="coname">© ALL COPYRIGHT RESERVED</p>
+  </section>
+</body>
+<script src="./script.js" defer></script>
+<script src="./script2.js" defer></script>
+<script src="./script3.js" defer></script>
+<script src="./js/carousel.js"></script>
+<!-- <script src="http://www.5imoban.net/download/swiper/swiper-4.0.5.min.js"></script> -->
+
+<script>
+  function H5swiper(){
+  var H5swiper2 = new Swiper(".h5 .mySwiper2", {
+    loop: true,
+    navigation: {
+      nextEl: '.games-next',
+      prevEl: '.games-prev',
+    },
+  });
+}
+  var swiper = new Swiper(".one .mySwiper", {
+     autoplay: {
+     delay: 10000,
+     disableOnInteraction: false,
+     },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  const right = document.querySelector('.MainBackRight');
+  const left = document.querySelector('.MainBackLeft');
+
+  left.addEventListener('mouseover', function() {
+            right.classList.add('MainBackRightOff')
+  });
+  left.addEventListener('mouseleave', function() {
+            right.classList.remove('MainBackRightOff')
+  });
+  right.addEventListener('mouseover', function() {
+            left.classList.add('MainBackLeftOff')
+  });
+  right.addEventListener('mouseleave', function() {
+            left.classList.remove('MainBackLeftOff')
+  });
+
+        // target.addEventListener('mouseover', function() {
+        //     sibling.style.filter = 'brightness(0.5)';
+        //     sibling.style.
+        // });
+        // target.addEventListener('mouseout', function() {
+        //     sibling.style.filter = '';
+        // }); .MainBackRightOff
+</script>
+
+</html>

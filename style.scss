@@ -1,0 +1,454 @@
+body.h5{
+  & section.one{
+    overflow: hidden;
+      & .a{
+        & video{
+        object-fit: cover;
+        height: 100vh;
+        }
+        & p{
+          position: absolute;
+          width: 100%;
+        }
+      }
+      & .b{
+        & .model {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          & .g-container-circle {
+              position: absolute;
+              margin: auto;
+              width: 90vw;
+              height: 90vw;
+              // transform: rotate(50deg);
+              animation: shadow 2s infinite linear;
+              top: auto;
+              bottom: -2.8rem;
+              right: auto;
+              margin-right: auto;
+          }
+        }
+    }
+  }
+  // & section.footer{ 
+  //   background-color: #363636;
+  // }
+  & section.five{
+    overflow: hidden;
+    & .title{
+      padding-top: 2.5rem;
+      font-weight: 900;
+      font-size: 25px;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      color: black;
+      margin-bottom: 2rem;
+      &::after {
+          content: "";
+          display: block;
+          width: 2rem;
+          height: 5px;
+          background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+        }
+    }
+    & .Block{
+      display: flex;
+      position: relative;
+      & .content{
+        display: none;
+      }
+      & .prev,& .next{
+        margin: 0;
+        position: absolute;
+        bottom: 2.5rem;
+        width: 45px;
+        height: 45px;
+        border: 2px solid transparent;
+        z-index: 21;
+        border-radius: 12px;
+        & img{
+          width: 30%;
+        }
+        &:hover{
+          box-shadow: none;
+        }
+      }
+      & .next{
+        left: 1rem;
+      }
+      & .prev{
+        right: 1rem;
+      }
+      & #certify{
+        height: 65vh;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        &::after{
+          content: 'MORE';
+          display: block;
+          width: 186px;
+          height: 62px;
+          position: absolute;
+          bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 26px;
+          font-weight: 600;
+          color: #DC2EC3;
+          border: 3px solid #DC2EC3;
+          border-radius: 40px;
+        }
+        & .carousel{
+          display: flex;
+          align-items: center;
+          padding: 0 0 40%;
+          & .item{
+            width: 250px;
+            height: 200px;
+            background-size: cover;
+            & .ititle{
+              margin-top: 5px;
+              font-size: 12px;
+            }
+            &.light{
+              width: 100%;
+              height: 300px;
+              & .ititle{
+                font-size: 20px;
+              }
+            }
+            &.a{
+              transform: rotateY(0deg) translateZ(210px);
+              &.light{
+              transform: rotateY(0deg) translateZ(290px);
+              }
+            }
+            &.b{
+              transform: rotateY(60deg) translateZ(210px);
+              &.light{
+              transform: rotateY(60deg) translateZ(290px);
+              }
+            }
+            &.c{
+              transform: rotateY(120deg) translateZ(210px);
+              &.light{
+              transform: rotateY(120deg) translateZ(290px);
+              }
+            }
+            &.d{
+              transform: rotateY(180deg) translateZ(210px);
+              &.light{
+              transform: rotateY(180deg) translateZ(290px);
+              }
+            }
+            &.e{
+              transform: rotateY(240deg) translateZ(210px);
+              &.light{
+              transform: rotateY(240deg) translateZ(290px);
+              }
+            }
+            &.f{
+              transform: rotateY(300deg) translateZ(210px);
+              &.light{
+              transform: rotateY(300deg) translateZ(290px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & section.two{
+    position: relative;
+    & .title{
+      padding-top: 2.5rem;
+      font-weight: 900;
+      font-size: 25px;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      color: white;
+      margin-bottom: 13rem;
+      &::after {
+          content: "";
+          display: block;
+          width: 2rem;
+          height: 5px;
+          background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+        }
+    }
+    & .bigBG {
+      opacity: 1;
+      transition: 0.5s;
+      width: 100%;
+      height: 15vh;
+      position: absolute;
+      background: url(./img/our_advantage_bg_logo.png) no-repeat center;
+      background-size: contain;
+      top: 10%;
+    }
+    & .bottom{
+      top: 12%;
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 200px;
+      align-items: center;
+      justify-content: center;
+      & button{
+        animation: rippleH5 5s infinite;
+        &:nth-child(1) {
+          animation-delay: 500ms;
+        }
+        
+        &:nth-child(2) {
+          animation-delay: 1000ms;
+        }
+        
+        &:nth-child(3) {
+          animation-delay: 1500ms;
+        }
+        
+        &:nth-child(4) {
+          animation-delay: 2000ms;
+        }
+        
+        &:nth-child(5) {
+          animation-delay: 2500ms;
+        }
+      }
+      
+    }
+    & .ourMain{
+    // display: none;
+    width: 95%;
+    margin: 0 auto;
+    /* 设置项目之间的间距 */
+    box-sizing: border-box;
+    color: white;
+    padding-bottom: 2rem;
+    & div:not(:last-child){
+      margin-bottom: 2rem;
+    }
+    & div{
+      opacity: 0;
+      background: #750ca249 0% 0% no-repeat padding-box;
+      /* box-shadow: 0.98px -0.21px 29px rgba(221, 221, 221, 0.5098039216); */
+      border-radius: 20px;
+      padding: 4% 4% 4%;
+      & p:first-child{
+        position: relative;
+        text-align: left;
+        padding-left: 2rem;
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: .5rem;
+        &::after{
+          top: 0;
+          left: 0;
+        }
+      }
+      & p:last-child{
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+    } 
+  }
+  & section.the{
+    height: 1202px;
+    width: 100vw;
+    overflow: hidden;
+    & .thrBack{
+      height: 100%;
+      width: 100%;
+      position: relative;
+      & .MainBackRight{
+        cursor: pointer;
+        // opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: calc(100%*(2/3));
+        background:url(./img/services/right/api_txt_h.png) no-repeat 73% 70%,  url(./img/services/right/img_roll.png) no-repeat 70% 100%, url(./img/services/right/img_girl.png) no-repeat 85% 100%,url(./img/services/right/api_bg.jpg) no-repeat;
+        background-size:  90%, 100%, 20rem, cover;
+        clip-path: polygon(100% 0%, 120% 100%, 0% 100%, 0% 50%, 23% 40%, 115% 0%);
+        transition: .5s;
+        // right: -10%;
+        bottom: 0;
+        overflow: hidden;
+        & .lilguy{
+          position: absolute;
+          right: 1rem;
+          top: 25rem;
+          background: url(./img/services/img_man.png) no-repeat center;
+          background-size: cover;
+          width: 110px;
+          height: 110px;
+          animation: floatAnimation 3s infinite;
+          animation-delay: 1.3s;
+        }
+        & .sic{
+          background: url(./img/services/img_sic_big.png) no-repeat right;
+          background-size: contain;
+          position: absolute;
+          height: 78px;
+          width: 78px;
+          right: 4rem;
+          bottom: 1rem;
+          animation: floatAnimation 3s infinite;
+          &::before {
+            content: "";
+            position: absolute;
+            right: -3rem;
+            bottom: 5rem;
+            background: url(./img/services/img_sic_s.png) no-repeat center;
+            height: 100px;
+            width: 59px;
+            animation: floatAnimation 3s infinite;
+            animation-delay: 0.5s;
+          }
+        }
+        
+      }
+      & .MainBackLeft{
+        outline: 1px solid blue;
+        cursor: pointer;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+        height: calc(100%*(2/3));
+        background: url(./img/services/left/whiteL_pc.png) no-repeat -143% 129%,url(./img/services/left/whiteL_girl.png) no-repeat -20% 50%,url(./img/services/left/whiteLable_txt_h.png) no-repeat center 5% ,url(./img/services/left/whiteL_bg.jpg) no-repeat bottom;
+        background-size:80%,20rem, 90%, cover;
+        clip-path: polygon(230% 0%, -57% 125%, 161% 195%, 0% 100%, 0% 75%, 0% 0%);
+        transition: .5s;
+        & .sic1{
+          background: url(./img/services/left/whiteL_coin01.png) no-repeat;
+          background-size: contain;
+          position: absolute;
+          height: 54px;
+          width: 41px;
+          top: 18rem;
+          right: 20%;
+          animation: floatAnimation 3s infinite;
+          animation-delay: 0.5s;
+        }
+        & .sic2{
+          background: url(./img/services/left/whiteL_coin02.png) no-repeat;
+          background-size: contain;
+          position: absolute;
+          height: 39px;
+          width: 47px;
+          top: 14rem;
+          right: 8%;
+          animation: floatAnimation 3s infinite;
+          animation-delay: 0.3s;
+        }
+      }
+    }
+  }
+  & section.four{
+    overflow: hidden;
+    & .Block{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      // overflow: hidden;
+      position: relative;
+      & .title{
+        padding-top: 2.5rem;
+        font-weight: 900;
+        font-size: 25px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        color: black;
+        margin-bottom: 2rem;
+        &::after {
+            content: "";
+            display: block;
+            width: 2rem;
+            height: 5px;
+            background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+          }
+        }
+      & .gamesBtn{
+          & .swiper-slide{
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            & .gamesBtnItem{
+              overflow: hidden;
+              flex-shrink: 0;
+              display: block;
+              width: 335px;
+              height: 621px;
+              border-radius: 2rem;
+              background-size: cover;
+              position: relative;
+              & .mask{
+                width: 100%;
+                position: absolute;
+                text-align: left;
+                padding: 3rem 0 3rem 1.5rem;
+                bottom: 0;
+                font-size: 36px;
+                font-weight: 600;
+                color: white;
+                background:linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%,black);
+                & span{
+                  display: none;
+                }
+              }
+          }
+        } 
+      } 
+      & .moreBtn{
+        margin:1rem 0;
+        width: 180px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 26px;
+        font-weight: 600;
+        color: #DC2EC3;
+        border: 3px solid #DC2EC3;
+        border-radius: 30px;
+      }
+      & .NPbut{
+        padding:0 20px ;
+        margin:1rem 0 1.5rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        & div{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          width: 45px;
+          height: 45px;
+          border: 2px solid transparent;
+          border-radius: 12px;
+          background-clip: padding-box, border-box;
+          background-origin: padding-box, border-box;
+          background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to top, #11b0f6, #711cfa, #e852cd, #f81586, #fa0a7a);
+          & img{
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+}

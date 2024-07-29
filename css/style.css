@@ -1,0 +1,4004 @@
+@charset "UTF-8";
+*, *:before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.pc header#Header {
+  font-size: 15px;
+  margin-top: 2rem;
+  padding: 0 5rem;
+  position: fixed;
+  visibility: inherit;
+  opacity: 21;
+  z-index: 11;
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  color: white;
+  justify-content: space-between;
+}
+body.pc header#Header div.bglogo {
+  width: 11.5rem;
+  background-image: url(../img/logo_W.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s;
+}
+body.pc header#Header div.bglogo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+body.pc header#Header .rBlock {
+  display: flex;
+  padding: 5px 20px;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+body.pc header#Header .rBlock .seachBlock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+body.pc header#Header .rBlock .seachBlock input {
+  transition: 0.5s;
+  padding: 7px;
+  outline: 2px solid white;
+  border-radius: 27px;
+  background: none;
+  border: none;
+  height: 53px;
+  width: 138px;
+  position: relative;
+  color: white;
+  font-size: 15px;
+}
+body.pc header#Header .rBlock .seachBlock>div>div {
+  display: none;
+}
+body.pc header#Header .rBlock .seachBlock input::-moz-placeholder {
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+  color: white;
+  padding-left: 5px;
+}
+body.pc header#Header .rBlock .seachBlock input::placeholder {
+  transition: 0.5s;
+  color: white;
+  padding-left: 5px;
+}
+body.pc header#Header .rBlock .seachBlock input:hover {
+  background: rgba(128, 128, 128, 0.533);
+}
+body.pc header#Header .rBlock .seachBlock i {
+  transition: 0.5s;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  background: url(../img/icon_search.svg);
+  width: 1rem;
+  height: 1rem;
+}
+
+body.pc header#Header.one.two .rBlock .seachBlock i {
+  filter: invert(100%);
+}
+body.pc header#Header .rBlock div.lang {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  font-weight: 500;
+}
+body.pc header#Header .rBlock div.lang:hover {
+  color: rgba(254, 254, 254, 0.5019607843);
+}
+body.pc header#Header .rBlock div.lang:hover .langMain {
+  visibility: unset;
+  opacity: 1;
+}
+body.pc header#Header .rBlock div.lang:hover::after {
+  transform: rotate(180deg);
+  opacity: 0.5;
+}
+body.pc header#Header .rBlock div.lang::after {
+  content: "";
+  transition: 0.5s;
+  margin-left: 0.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  display: inline-block;
+  background: url(../img/icon_arrow_w2.png) no-repeat bottom;
+}
+body.pc header#Header .rBlock div.lang .langMain {
+  z-index: 100;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  color: white;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-evenly;
+  background: transparent linear-gradient(90deg, #C22AD9 0%, #E430BB 100%) 0% 0% no-repeat padding-box;
+  top: 3rem;
+  right: 4.7rem;
+  width: 5rem;
+}
+body.pc header#Header .rBlock div.lang .langMain li {
+  line-height: 2rem;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+body.pc header#Header .rBlock div.lang .langMain li:after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 35px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.5s ease;
+}
+body.pc header#Header .rBlock div.lang .langMain li:hover::after {
+  width: 65%;
+}
+body.pc header#Header .rBlock div.lang .langMain li img {
+  width: 1.3rem;
+  margin-right: 0.5rem;
+}
+body.pc header#Header .rBlock .headerNav {
+  align-items: center;
+  display: flex;
+}
+body.pc header#Header .rBlock .headerNav li.item {
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  margin-right: 3.5rem;
+  height: 100%;
+  position: relative;
+}
+body.pc header#Header .rBlock .headerNav li.item.active {
+  border-bottom: 5px solid white;
+  padding-top: 25px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+}
+body.pc header#Header .rBlock .headerNav li.item.add ul.navItem {
+  padding: 10px;
+  color: white;
+  text-align: left;
+  display: none;
+  position: absolute;
+  top: 3rem;
+  left: -1rem;
+  background: transparent linear-gradient(90deg, #C22AD9 0%, #E430BB 100%) 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+}
+body.pc header#Header .rBlock .headerNav li.item.add ul.navItem li {
+  margin-right: 0;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 2px solid transparent;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+body.pc header#Header .rBlock .headerNav li.item.add ul.navItem li::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 30px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.5s ease;
+}
+body.pc header#Header .rBlock .headerNav li.item.add ul.navItem li:hover::after {
+  width: 90%;
+}
+body.pc header#Header .rBlock .headerNav li.item.add::after {
+  content: "";
+  transition: 0.5s;
+  position: absolute;
+  right: -1.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  display: inline-block;
+  background: url(../img/icon_arrow_w2.png) no-repeat bottom;
+}
+body.pc header#Header .rBlock .headerNav li.item:hover {
+  color: rgba(254, 254, 254, 0.5019607843);
+}
+body.pc header#Header .rBlock .headerNav li.item:hover.add ul.navItem {
+  display: block;
+}
+body.pc header#Header .rBlock .headerNav li.item:hover.add::after {
+  transform: rotate(180deg);
+  opacity: 0.5;
+}
+body.pc header#Header.one.two {
+  color: black;
+}
+body.pc header#Header.one.two div.bglogo {
+  width: 4rem;
+  background-image: url(../img/bg_icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+body.pc header#Header.one.two .rBlock {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px 20px;
+  border-radius: 30px;
+}
+body.pc header#Header.one.two .rBlock .seachBlock input {
+  outline: 2px solid black;
+  background: rgba(255, 255, 255, 0.6117647059);
+  color: black;
+}
+body.pc header#Header.one.two .rBlock .seachBlock input::-moz-placeholder {
+  color: black;
+}
+body.pc header#Header.one.two .rBlock .seachBlock input::placeholder {
+  color: black;
+}
+body.pc header#Header.one.two .rBlock .seachBlock input:hover {
+  background: rgba(214, 214, 214, 0.5019607843);
+  outline: 1px solid rgba(0, 0, 0, 0);
+}
+body.pc header#Header.one.two .rBlock div.lang:hover {
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+body.pc header#Header.one.two .rBlock div.lang:hover::after {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(200deg) brightness(100%) contrast(112%);
+}
+body.pc header#Header.one.two .rBlock div.lang::after {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(200deg) brightness(0%) contrast(112%);
+}
+body.pc header#Header.one.two .rBlock .headerNav li.item.active {
+  border-bottom: 5px solid black;
+}
+body.pc header#Header.one.two .rBlock .headerNav li.item:hover {
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+body.pc header#Header.one.two .rBlock .headerNav li.item.add::after {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(200deg) brightness(0%) contrast(112%);
+}
+body.pc header#Header.one.two .rBlock .headerNav li.item:hover.add::after {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(200deg) brightness(80%) contrast(112%);
+}
+body.pc .clint {
+  opacity: 1;
+  transition: 0.5s;
+  pointer-events: none;
+  top: 0.5rem;
+  left: 1rem;
+  position: fixed;
+  width: 98%;
+  height: 98%;
+  margin: auto;
+  position: fixed;
+  inset: 0;
+}
+body.pc .clint::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #fb0677 0, #eb54cc 13.8%, #bd2fe4 24.1%, #7a10fa 41.9%, #4e42f6 60.1%, #0b90f1 75.9%, #12b2f7 100%);
+  -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 4px;
+  border-radius: 20px;
+}
+body.pc .clint div.space {
+  height: 95vh;
+  visibility: hidden;
+}
+body.pc section {
+  min-height: 100vh;
+  position: relative;
+}
+body.pc section.one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body.pc section.one .swiper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+body.pc section.one .swiper-pagination {
+  margin-bottom: 1rem;
+}
+body.pc section.one .swiper-pagination .swiper-pagination-bullet {
+  width: 5rem;
+  border-radius: 0;
+}
+body.pc section.one .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #EC32B4;
+}
+body.pc section.one .swiper-slide {
+  /* cursor: pointer; */
+  overflow: hidden;
+  text-align: center;
+  font-size: 20px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.pc section.one .swiper-slide.a {
+  /* background: url(../img/banner01.jpg) center no-repeat; */
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+body.pc section.one .swiper-slide.a p {
+  order: 1;
+  font-size: 5vw;
+  font-family: FugazOne-Regular;
+  font-style: italic;
+  font-weight: 900;
+  color: white;
+  width: 60%;
+  text-align: left;
+  position: absolute;
+  left: 5rem;
+}
+body.pc section.one .swiper-slide.b .model .Sic {
+  display: block;
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  right: 4rem;
+  bottom: 1rem;
+}
+body.pc section.one .swiper-slide.b .model .Sic .sic1 {
+  background: url(../img/img_sic01.png) center bottom no-repeat;
+  display: block;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+body.pc section.one .swiper-slide.b .model .Sic .sic2 {
+  background: url(../img/img_sic02.png) center bottom no-repeat;
+  display: block;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  right: 0;
+  bottom: 1.5rem;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+body.pc section.one .swiper-slide.b .model .plate {
+  background: url(../img/img_roll.png) center bottom no-repeat;
+  background-size: contain;
+  display: block;
+  position: absolute;
+  right: 30rem;
+  bottom: 0;
+  width: 35rem;
+  height: 30%;
+}
+body.pc section.one .swiper-slide.b .model .girl {
+  background: url(../img/img_girl.png) center bottom no-repeat;
+  background-size: contain;
+  display: block;
+  position: absolute;
+  right: 15rem;
+  bottom: 0;
+  width: 35rem;
+  height: 100%;
+}
+body.pc section.one .swiper-slide.b .model .stand {
+  background: url(../img/img_stand.png) center bottom no-repeat;
+  background-size: contain;
+  display: block;
+  position: absolute;
+  right: 35rem;
+  bottom: 2rem;
+  width: 35rem;
+  height: 38%;
+}
+body.pc section.one .swiper-slide.b .bannerText {
+  color: white;
+  width: 25%;
+  height: 50%;
+  position: absolute;
+  left: 14%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+body.pc section.one .swiper-slide.b .bannerText p:first-child {
+  font-size: 45px;
+  font-weight: 600;
+}
+body.pc section.one .swiper-slide.b .bannerText p:last-child {
+  font-size: 50px;
+  font-weight: 600;
+  word-spacing: 1rem;
+}
+body.pc section.one .swiper-slide.b .bannerText div.sigma {
+  background: url(../img/sigma-europe-logo.png) no-repeat center;
+  background-size: contain;
+  display: block;
+  width: 100%;
+  height: 25%;
+}
+body.pc section.one .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body.pc section.one .scroollBtn {
+  cursor: pointer;
+  order: 2;
+  width: 2.5rem;
+  height: 11rem;
+  border: 2px solid white;
+  border-radius: 3rem;
+  background: url(../img/txt_Scroll.png) no-repeat center 3.5rem;
+  position: absolute;
+  z-index: 10;
+  right: 3rem;
+}
+body.pc section.one .scroollBtn:after {
+  content: "";
+  display: block;
+  background-color: white;
+  width: 0.5rem;
+  height: 0.5rem;
+  animation: slide-in 1.2s infinite;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  left: 0.9rem;
+}
+body.pc section.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.pc section.two .bottom {
+  top: 50%;
+  position: absolute;
+  display: flex;
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+body.pc section.two .bigBG {
+  opacity: 0;
+  transition: 0.5s;
+  width: 15vw;
+  height: 20vh;
+  bottom: 40vh;
+  position: absolute;
+  background: url(../img/our_advantage_bg_logo.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.two .Block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  height: 80vh;
+}
+body.pc section.two .Block p.title {
+  margin-top: 1.5rem;
+  font-weight: 900;
+  font-size: 25px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  color: white;
+}
+body.pc section.two .Block p.title::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 5px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.pc section.two .Block .ourMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+body.pc section.two .Block .ourMain div {
+  display: none;
+  width: 40%;
+  /* 设置每个项目的宽度为容器的一半减去一些间距 */
+  margin: 0 30px 20px;
+  /* 设置项目之间的间距 */
+  background-color: #3498db;
+  background: #750ca249 0% 0% no-repeat padding-box;
+  /* box-shadow: 0.98px -0.21px 29px rgba(221, 221, 221, 0.5098039216); */
+  border-radius: 20px;
+  padding: 2% 2% 4%;
+  box-sizing: border-box;
+  color: white;
+}
+@media only screen and (max-width: 1440px) {
+  body.pc section.two .Block .ourMain div {
+  display: none;
+  width: 40%;
+  /* 设置每个项目的宽度为容器的一半减去一些间距 */
+  margin: 0 30px 20px;
+  /* 设置项目之间的间距 */
+  background-color: #3498db;
+  background: #750ca249 0% 0% no-repeat padding-box;
+  /* box-shadow: 0.98px -0.21px 29px rgba(221, 221, 221, 0.5098039216); */
+  border-radius: 20px;
+  padding: 2% 2% 4%;
+  box-sizing: border-box;
+  color: white;
+}
+}
+body.pc section.two .Block .ourMain div:hover {
+  box-shadow: 0.98px -0.21px 29px rgba(236, 5, 255, 0.5098039216);
+}
+body.pc section.two .Block .ourMain div p:first-child {
+  position: relative;
+  padding-left: 2em;
+  font-size: 25px;
+  text-align: left;
+  width: 100%;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+body.pc section.two .Block .ourMain div p:last-child {
+  font-size: 18px;
+  text-align: left;
+}
+body.pc section.the {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+}
+body.pc section.the .thrBack {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+}
+body.pc section.the .thrBack .dot {
+  background: url(../img/top_dots_01.svg) no-repeat;
+  width: 50%;
+  height: 74%;
+  display: block;
+  position: absolute;
+  top: 25vh;
+}
+body.pc section.the .thrBack .MainBackLeft:hover{
+  left: 0;
+  background: url(../img/services/left/whiteL_girl.png) no-repeat 19.5% 120%, url(../img/services/left/whiteL_ball.png) no-repeat 50% 55%, url(../img/services/left/whiteL_pc.png) no-repeat 40% 125%,url(../img/services/left/whiteLable_txt_h.png) no-repeat 29% 20% ,url(../img/services/left/whiteL_bg.jpg) no-repeat ;
+  background-size: 27rem, 15%, 20%, 44%, 100vw 100vh;
+  clip-path: polygon(70% 0%, 50% 125%, 200% 105%, 0% 100%, 0% 75%, 0% 0%);
+}
+body.pc section.the .thrBack .MainBackLeftOff{
+  filter: brightness(0.5);
+  clip-path:polygonpolygon(60% 0%, 40% 125%, 200% 105%, 0% 100%, 0% 75%, 0% 0%);
+}
+
+body.pc section.the .thrBack .MainBackRightOff{
+  filter: brightness(0.5);
+  clip-path:polygon(100% -10%, 100% 100%, 200% 105%, 0% 100%, 44% 100%, 60% 0%) !important
+}
+body.pc section.the .thrBack .MainBackLeft {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/services/left/whiteL_girl.png) no-repeat 19.5% 120%, url(../img/services/left/whiteL_ball.png) no-repeat 50% 55%, url(../img/services/left/whiteL_pc.png) no-repeat 40% 125%,url(../img/services/left/whiteLable_txt.png) no-repeat 29% 20% ,url(../img/services/left/whiteL_bg.jpg) no-repeat ;
+  background-size: 27rem, 15%, 20%, 44%, 100vw 100vh;
+  clip-path: polygon(70% 0%, 50% 125%, 200% 105%, 0% 100%, 0% 75%, 0% 0%);
+  left: -10%;
+  transition: .5s;
+}
+body.pc section.the .thrBack .MainBackLeft .sic1 {
+  background: url(../img/services/left/whiteL_coin01.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 74px;
+  width: 61px;
+  bottom: 23.5rem;
+  left: 13%;
+  animation: floatAnimation 3s infinite;
+  animation-delay: 0.5s;
+}
+body.pc section.the .thrBack .MainBackLeft .sic2 {
+  background: url(../img/services/left/whiteL_coin02.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 59px;
+  width: 67px;
+  bottom: 3.5rem;
+  left: 50%;
+  animation: floatAnimation 3s infinite;
+  animation-delay: 0.3s;
+}
+body.pc section.the .thrBack .MainBackRight:hover{
+  right: 0;
+  background: url(../img/services/right/img_roll.png) no-repeat 70% 100%, url(../img/services/right/img_girl.png) no-repeat 85% 200%, url(../img/services/right/img_slot.png) no-repeat 60% 85%,url(../img/services/right/api_txt_h.png) no-repeat 73% 20%, url(../img/services/right/api_bg.jpg) no-repeat;
+  background-size: 25%, 26rem, 25%, 32%, 100vw 100vh;
+}
+body.pc section.the .thrBack .MainBackRight {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/services/right/img_roll.png) no-repeat 70% 100%, url(../img/services/right/img_girl.png) no-repeat 85% 200%, url(../img/services/right/img_slot.png) no-repeat 60% 85%,url(../img/services/right/api_txt.png) no-repeat 73% 20%, url(../img/services/right/api_bg.jpg) no-repeat;
+  background-size: 25%, 26rem, 25%, 32%, 100vw 100vh;
+  clip-path: polygon(100% -10%, 100% 100%, 200% 105%, 0% 100%, 34% 100%, 50% 0%);
+  transition: .5s;
+  right: -10%;
+  overflow: hidden;
+}
+body.pc section.the .thrBack .MainBackRight .lilguy {
+  position: absolute;
+  right: 15rem;
+  bottom: 38rem;
+  background: url(../img/services/img_man.png) no-repeat center;
+  background-size: cover;
+  width: 171px;
+  height: 181px;
+  animation: floatAnimation 3s infinite;
+  animation-delay: 1.3s;
+}
+body.pc section.the .thrBack .MainBackRight .lilguy:before {
+  content: "";
+  position: absolute;
+  left: -45px;
+  top: 20px;
+  background: url(../img/services/img_poker.png) no-repeat center;
+  display: block;
+  height: 100px;
+  width: 59px;
+}
+body.pc section.the .thrBack .MainBackRight .sic {
+  background: url(../img/services/img_sic_big.png) no-repeat right;
+  background-size: contain;
+  position: absolute;
+  height: 147px;
+  width: 160px;
+  bottom: 2rem;
+  right: 15rem;
+  animation: floatAnimation 3s infinite;
+}
+body.pc section.the .thrBack .MainBackRight .sic::before {
+  content: "";
+  position: absolute;
+  left: -45px;
+  top: 20px;
+  background: url(../img/services/img_sic_s.png) no-repeat center;
+  height: 100px;
+  width: 59px;
+  animation: floatAnimation 3s infinite;
+  animation-delay: 0.5s;
+}
+body.pc section.the .thrBack .MainBackRight .fish1 {
+  background: url(../img/services/img_fish01.png) no-repeat right;
+  background-size: contain;
+  position: absolute;
+  height: 195px;
+  width: 203px;
+  bottom: 0.5rem;
+  right: 52%;
+  animation: floatAnimation 3s infinite;
+  animation-delay: 1s;
+}
+@media only screen and (max-width: 1440px) {
+  body.pc section.the .thrBack .MainBackLeft {
+    background-size: 24rem, 15%, 20%, 44%, 100vw 100vh;
+  }
+   body.pc section.the .thrBack .MainBackRight { 
+    background-size: 25%, 23rem, 25%, 32%, 100vw 100vh;
+  }
+  body.pc section.the .thrBack .MainBackRight .lilguy {
+    right: 15rem;
+    bottom: 35rem;
+    width: 151px;
+    height: 161px;
+  }
+  body.pc section.the .thrBack .MainBackRight .lilguy:before {
+    left: -45px;
+    top: 20px;
+    background-size: contain;
+    height: 70px;
+    width: 59px;
+  }
+  body.pc section.the .thrBack .MainBackRight .sic {
+    background-size: 100px;
+    position: absolute;
+    height: 127px;
+    width: 140px;
+    bottom: 0.5rem;
+    right: 12rem;
+  }
+  body.pc section.the .thrBack .MainBackRight .sic::before {
+    left: -35px;
+    top: 20px;
+    height: 100px;
+    width: 59px;
+  }
+  body.pc section.the .thrBack .MainBackRight .fish1 {
+    height: 175px;
+    width: 183px;
+    right: 49%;
+    bottom: 2%;
+  }
+}
+body.pc section.the .textBlock {
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  pointer-events: none;
+}
+body.pc section.the .textBlock > div.Main {
+  transform: translateY(-50%);
+  width: 518px;
+  background: white;
+  height: 331px;
+  padding: 3.5%;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  border-radius: 36px;
+  -webkit-border-radius: 36px; /* Safari 和 Chrome */
+  -moz-border-radius: 36px; /* Firefox */
+  box-shadow: 0.98px -0.21px 29px rgba(221, 221, 221, 0.5098039216);
+}
+body.pc section.the .textBlock > div.Main.onMain::before {
+  content: "";
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  background: url(../img/services/img_free.png) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: -4.5rem;
+  left: 11rem;
+}
+body.pc section.the .textBlock > div.Main.twMain::before {
+  content: "";
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  background: url(../img/services/img_pro.png) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: -4.5rem;
+  left: 12rem;
+}
+@media only screen and (max-width: 1440px) {
+  body.pc section.the .textBlock > div.Main {
+    width: 360px;
+  }
+  body.pc section.the .textBlock > div.Main.onMain::before {
+    width: 7rem;
+    height: 7rem;
+    top: -3.5rem;
+    left: 7rem;
+  }
+  body.pc section.the .textBlock > div.Main.twMain::before {
+    width: 7rem;
+    height: 7rem;
+    top: -3.5rem;
+    left: 7rem;
+  }
+}
+body.pc section.the .textBlock > div.Main p:first-child {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 800;
+}
+body.pc section.the .textBlock > div.Main p:first-child::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.pc section.the .textBlock > div.Main p:nth-child(2) {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 5%;
+  line-height: 37px;
+  padding: 1rem 0;
+}
+body.pc section.the .textBlock > div.Main p:last-child {
+  margin: 3% 0 5%;
+  font-weight: 800;
+  padding-right: 1rem;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+body.pc section.the .textBlock > div.Main p:last-child::before {
+  content: "";
+  background: url(../img/icon_arrow.png) no-repeat;
+  background-position: center;
+  width: 0.5rem;
+  height: 100%;
+  display: block;
+  position: absolute;
+  right: 0;
+  transition: 0.3s;
+}
+body.pc section.the .textBlock > div.Main p:last-child:hover {
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+body.pc section.the .textBlock > div.Main p:last-child:hover::before {
+  right: -1rem;
+}
+body.pc section.the .Block {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  height: 80vh;
+  margin-top: 1.5rem;
+  z-index: 1;
+  color: #fff;
+  pointer-events: none;
+}
+body.pc section.four {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.pc section.four .furBack {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+}
+body.pc section.four .furBack .dot {
+  background: url(../img/top_dots_01.svg) no-repeat center;
+  background-size: cover;
+  width: 50%;
+  height: 60%;
+  display: block;
+  position: absolute;
+  top: 30vh;
+  right: 0;
+}
+body.pc section.four .furBack .red {
+  background: url(../img/bg_red.png);
+  background-repeat: no-repeat;
+  background-position: contain;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: block;
+  top: 30vh;
+  right: 60vw;
+}
+body.pc section.four .Block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 1.5rem auto 0;
+  height: 80vh;
+}
+body.pc section.four .Block p.title {
+  margin-top: 1.5rem;
+  font-weight: 900;
+  font-size: 25px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+body.pc section.four .Block p.title::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 5px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+/* body.pc section.four .Block .gamesBtn .swiper-slide .gamesBtnItem{
+  display: none;
+} */
+body.pc section.four .Block .gamesBtn {
+  margin-top: 2rem;
+  height: 80vh;
+  width: 90vw;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+@media only screen and (max-width: 1440px) {
+  body.pc section.four .Block .gamesBtn {
+    width: 90vw;
+  }
+}
+body.pc section.four .Block .gamesBtn div.item, body.h5 section.four .Block .gamesBtn div.item{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+body.pc section.four .Block .btn-1 div.item .poke1, body.h5 section.four .Block .btn-1 div.item .poke1{
+  background: url(../img/ourgames/casino/poker01.png)no-repeat center;
+  top: 34%;
+  width: 4rem;
+  height: 5rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+body.pc section.four .Block .btn-1 div.item .girl, body.h5 section.four .Block .btn-1 div.item .girl{
+  background: url(../img/ourgames/casino/roulette.png) no-repeat bottom,url(../img/ourgames/casino/casino_girl.png) no-repeat 1rem 2rem;
+  background-size: 95%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+body.pc section.four .Block .btn-1 div.item .poke2, body.h5 section.four .Block .btn-1 div.item .poke2{
+  background: url(../img/ourgames/casino/poker02.png)no-repeat center;
+  top: 14%;
+  right: 5%;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+body.pc section.four .Block .btn-1 div.item .sic1, body.h5 section.four .Block .btn-1 div.item .sic1{
+  background: url(../img/ourgames/casino/img_sic_big.png)no-repeat center;
+  bottom: 14%;
+  right: 3%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+body.pc section.four .Block .btn-1 div.item .sic2, body.h5 section.four .Block .btn-1 div.item .sic2{
+  background: url(../img/ourgames/casino/img_sic_s.png)no-repeat center;
+  bottom: 12%;
+  right: 18%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+body.pc section.four .Block .btn-2 div.item .ring, body.h5 section.four .Block .btn-2 div.item .ring{
+  background: url(../img/ourgames/poker/poker_light.png)no-repeat center;
+  background-size: cover;
+  right: -1.3rem;
+  width: calc(90% + 4rem);
+  height: calc(90%);
+  position: absolute;
+  animation: move 6s linear infinite;
+}
+body.pc section.four .Block .btn-2 div.item .point, body.h5 section.four .Block .btn-2 div.item .point{
+  background: url(../img/ourgames/poker/poker_effect.png)no-repeat center;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: floatAnimation2 3s ease-in-out infinite;
+}
+body.pc section.four .Block .btn-2 div.item .girl, body.h5 section.four .Block .btn-2 div.item .girl{
+  background: url(../img/ourgames/poker/poker_girl.png) no-repeat center bottom;
+  background-size: 70%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+body.pc section.four .Block .btn-2 div.item .con1, body.h5 section.four .Block .btn-2 div.item .con1{
+  background: url(../img/ourgames/poker/c01.png)no-repeat center;
+  bottom: 14%;
+  left: 3%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+body.pc section.four .Block .btn-2 div.item .con2, body.h5 section.four .Block .btn-2 div.item .con2{
+  background: url(../img/ourgames/poker/c02.png)no-repeat center;
+  top: 14%;
+  right: 3%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+@keyframes move{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+body.pc section.four .Block .btn-3 div.item .mon1, body.h5 section.four .Block .btn-3 div.item .mon1{
+  background: url(../img/ourgames/GalaxyTreasure/moster01.png)no-repeat center;
+  top: 8%;
+  left: 30%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  /* animation-delay: 0.7s; */
+}
+body.pc section.four .Block .btn-3 div.item .mon2, body.h5 section.four .Block .btn-3 div.item .mon2{
+  background: url(../img/ourgames/GalaxyTreasure/moster02.png)no-repeat center;
+  top: 25%;
+  right: 10%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+body.pc section.four .Block .btn-3 div.item .mon3, body.h5 section.four .Block .btn-3 div.item .mon3{
+  background: url(../img/ourgames/GalaxyTreasure/moster03.png)no-repeat center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+body.pc section.four .Block .btn-4 div.item .yun, body.h5 section.four .Block .btn-4 div.item .yun{
+  background: url(../img/ourgames/BgDaisenFishing/money.png)no-repeat center;
+  width: 8rem;
+  height: 6rem;
+  bottom: 0;
+  left: 5%;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+body.pc section.four .Block .btn-4 div.item .old, body.h5 section.four .Block .btn-4 div.item .old{
+  background: url(../img/ourgames/BgDaisenFishing/fishing_man.png)no-repeat center;
+  width: 100%;
+  height: 100%;
+  bottom: 2%;
+  position: absolute;
+  animation: floatAnimationRE 3s ease-in-out infinite;
+  /* animation-delay: 3s; */
+}
+body.pc section.four .Block .btn-4 div.item .drg , body.h5 section.four .Block .btn-4 div.item .drg{
+  background: url(../img/ourgames/BgDaisenFishing/dragon.png)no-repeat center;
+  width: 19rem;
+  height: 14rem;
+  top: -8%;
+  right: -40%;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+body.pc section.four .Block .btn-5 div.item .sea1, body.h5 section.four .Block .btn-5 div.item .sea1{
+  background: url(../img/ourgames/bgfishing/fiah01.png)no-repeat center;
+  top: 8%;
+  left: 10%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+body.pc section.four .Block .btn-5 div.item .sea2, body.h5 section.four .Block .btn-5 div.item .sea2{
+  background: url(../img/ourgames/bgfishing/Crab.png)no-repeat center 6rem,url(../img/ourgames/bgfishing/earth.png)no-repeat center 10rem ;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+   animation: floatAnimationRE 3s ease-in-out infinite;
+  animation-delay: 0.7s; 
+}
+body.pc section.four .Block .btn-5 div.item .sea3, body.h5 section.four .Block .btn-5 div.item .sea3{
+  background: url(../img/ourgames/bgfishing/fiah02.png)no-repeat center;
+  bottom: -2%;
+  right: -10%;
+  width: 8.5rem;
+  height: 7.5rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+body.pc section.four .Block .btn-5 div.item .sea4, body.h5 section.four .Block .btn-5 div.item .sea4{
+  background: url(../img/ourgames/bgfishing/turtle.png)no-repeat center;
+  bottom: -5%;
+  left: -12%;
+  width: 8.5rem;
+  height: 7.5rem;
+  position: absolute;
+  animation: floatAnimation 3s ease-in-out infinite;
+  /* animation-delay: 0.5s; */
+}
+
+
+
+
+
+
+
+
+body.pc section.four .Block .gamesBtn .swiper-slide{
+  width: 18% !important;
+  height: 84%;
+  position: relative;
+  border-radius: 30px;
+  display: none;
+}
+body.pc section.four .Block .gamesBtn .swiper-slide div.gamesBtnItem {
+  height: 100%;
+  transition: 0.3s;
+  border-radius: 30px;
+}
+body.pc section.four .Block .gamesBtn div:nth-child(even) {
+  margin: auto 0 2% 0;
+}
+body.pc section.four .Block .gamesBtn div:hover div.mask {
+  opacity: 1;
+  visibility: unset;
+}
+body.pc section.four .Block .gamesBtn div div.mask {
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.439);
+  color: white;
+  text-align: left;
+  font-weight: 600;
+  font-size: 25px;
+  border-radius: 30px;
+}
+body.pc section.four .Block .gamesBtn div div span {
+  display: block;
+  width: 60%;
+  height: 8%;
+  font-size: 17.5px;
+  border-radius: 3rem;
+  text-align: center;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+  position: absolute;
+  bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+body.pc section.four .Block .gamesBtn div div span::after {
+  content: "";
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: url(../img/icon_arrow.png) center no-repeat;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(200deg) brightness(150%) contrast(112%);
+  margin-left: 2rem;
+}
+body.pc section.four .Block .moreBtn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 8%;
+  background: white;
+  outline: 3px solid #DC2EC3;
+  border-radius: 3rem;
+  font-size: 20px;
+  color: #DC2EC3;
+}
+body.pc section.four .Block .NPbut{
+  display: none;
+}
+body.pc section.four .Block .moreBtn:hover {
+  filter: brightness(150%) contrast(110%);
+}
+body.pc section.five {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.pc section.five p.title {
+  margin-top: 6.5rem;
+  font-weight: 900;
+  font-size: 25px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+body.pc section.five p.title::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 5px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.pc section.five .Block {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1.5rem auto 0;
+  height: 80vh;
+}
+body.pc section.five .Block #certify {
+  width: 396px;
+  height: 370px;
+  position: relative;
+  perspective: 2000px;
+}
+@media only screen and (max-width: 1440px) {
+  body.pc section.five .Block #certify {
+    width: 315px;
+    height: 294px;
+    perspective: 3000px;
+  }
+}
+body.pc section.five .Block .content {
+  position: relative;
+  left: 130px;
+  width: 25%;
+  text-align: left;
+}
+body.pc section.five .Block .content > div {
+  display: none;
+}
+body.pc section.five .Block .content > div:first-child {
+  display: block;
+}
+body.pc section.five .Block .content .date {
+  color: #e130bd;
+  font-size: 24px;
+}
+body.pc section.five .Block .content .title {
+  font-size: 37px;
+  font-weight: bold;
+  color: #040404;
+  margin-bottom: 36px;
+  width: 90%;
+}
+body.pc section.five .Block .content p {
+  font-size: 18px;
+  color: #040404;
+  line-height: 1.2;
+}
+body.pc section.five .Block .content .more {
+  margin: 3% 0 5%;
+  font-weight: 800;
+  padding-right: 1rem;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+body.pc section.five .Block .content .more::before {
+  content: "";
+  background: url(../img/icon_arrow.png) no-repeat;
+  background-position: center;
+  width: 0.5rem;
+  height: 100%;
+  display: block;
+  position: absolute;
+  right: 0;
+  transition: 0.3s;
+}
+body.pc section.five .Block .content .more:hover {
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+body.pc section.five .Block .content .more:hover::before {
+  right: -1rem;
+}
+body.pc section.five .fiveBack {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+}
+body.pc section.five .fiveBack .dot {
+  background: url(../img/top_dots_01.svg) no-repeat;
+  width: 40%;
+  height: 80%;
+  display: block;
+  position: absolute;
+  top: 15vh;
+}
+body.pc section.footer {
+  background-color: #363636;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body.pc section.footer.footer {
+  color: white;
+  min-height: 23rem !important;
+  position: relative;
+  font-size: 12px;
+}
+body.pc section.footer.footer .LogoScroll {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #5a5a5a;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  padding: 0 5rem;
+  position: relative;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox::before {
+  content: "";
+  display: block;
+  width: 5.5rem;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to left, #363636 80%, transparent);
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox::after {
+  content: "";
+  display: block;
+  width: 5.5rem;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: linear-gradient(to right, #363636 80%, transparent);
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul {
+  display: flex;
+  flex: 0 0 auto;
+  height: 100%;
+  align-items: center;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m1 {
+  background: url(../img/gray/1.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m1:hover {
+  background: url(../img/color/1.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m2 {
+  background: url(../img/gray/2.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m2:hover {
+  background: url(../img/color/2.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m3 {
+  background: url(../img/gray/3.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m3:hover {
+  background: url(../img/color/3.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m4 {
+  background: url(../img/gray/4.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m4:hover {
+  background: url(../img/color/4.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m5 {
+  background: url(../img/gray/5.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m5:hover {
+  background: url(../img/color/5.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m6 {
+  background: url(../img/gray/6.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m6:hover {
+  background: url(../img/color/6.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m7 {
+  background: url(../img/gray/7.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m7:hover {
+  background: url(../img/color/7.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m8 {
+  background: url(../img/gray/8.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m8:hover {
+  background: url(../img/color/8.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m9 {
+  background: url(../img/gray/9.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m9:hover {
+  background: url(../img/color/9.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m10 {
+  background: url(../img/gray/10.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m10:hover {
+  background: url(../img/color/10.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m11 {
+  background: url(../img/gray/11.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m11:hover {
+  background: url(../img/color/11.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m12 {
+  background: url(../img/gray/12.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m12:hover {
+  background: url(../img/color/12.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m13 {
+  background: url(../img/gray/13.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m13:hover {
+  background: url(../img/color/13.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m14 {
+  background: url(../img/gray/14.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m14:hover {
+  background: url(../img/color/14.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m15 {
+  background: url(../img/gray/15.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m15:hover {
+  background: url(../img/color/15.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m16 {
+  background: url(../img/gray/16.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m16:hover {
+  background: url(../img/color/16.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m17 {
+  background: url(../img/gray/17.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m17:hover {
+  background: url(../img/color/17.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m18 {
+  background: url(../img/gray/18.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m18:hover {
+  background: url(../img/color/18.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m19 {
+  background: url(../img/gray/19.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m19:hover {
+  background: url(../img/color/19.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m20 {
+  background: url(../img/gray/20.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m20:hover {
+  background: url(../img/color/20.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m21 {
+  background: url(../img/gray/21.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m21:hover {
+  background: url(../img/color/21.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m22 {
+  background: url(../img/gray/22.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m22:hover {
+  background: url(../img/color/22.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m23 {
+  background: url(../img/gray/23.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m23:hover {
+  background: url(../img/color/23.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m24 {
+  background: url(../img/gray/24.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m24:hover {
+  background: url(../img/color/24.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m25 {
+  background: url(../img/gray/25.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m25:hover {
+  background: url(../img/color/25.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m26 {
+  background: url(../img/gray/26.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m26:hover {
+  background: url(../img/color/26.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m27 {
+  background: url(../img/gray/27.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m27:hover {
+  background: url(../img/color/27.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m28 {
+  background: url(../img/gray/28.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m28:hover {
+  background: url(../img/color/28.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m29 {
+  background: url(../img/gray/29.png) no-repeat center;
+  background-size: contain;
+  width: 9rem;
+  height: 70%;
+}
+body.pc section.footer.footer .LogoScroll div.LogoBox > ul li.m29:hover {
+  background: url(../img/color/29.png) no-repeat center;
+  background-size: contain;
+}
+body.pc section.footer.footer .footerBlock {
+  width: 70vw;
+  height: 17rem;
+}
+body.pc section.footer.footer .footerBlock .bgBlock {
+  display: flex;
+  height: 80%;
+  justify-content: space-evenly;
+}
+body.pc section.footer.footer .twBlock {
+  display: block;
+  width: 50%;
+}
+body.pc section.footer.footer .twBlock .media {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+}
+body.pc section.footer.footer .twBlock .media div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #535353;
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
+}
+body.pc section.footer.footer .twBlock .media div:hover {
+  background: #b427e5;
+}
+body.pc section.footer.footer .twBlock .footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+body.pc section.footer.footer .twBlock .footerNav li {
+  flex: 0 0 calc(33.33% - 10px);
+  /* 计算每个元素的宽度，减去间距 */
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+body.pc section.footer.footer .twBlock .footerNav li:hover {
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+body.pc section.footer.footer .twBlock .footerNav li::before {
+  content: "";
+  margin-right: 0.7rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  display: block;
+  background: url(../img/icon_arrow.png) no-repeat center;
+}
+body.pc section.footer.footer p.coname {
+  margin-bottom: 4rem;
+  width: 100%;
+}
+body.pc section.footer.footer div.onBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 200px;
+  height: 100%;
+}
+body.pc section.footer.footer div.onBlock a {
+  text-decoration: none;
+  color: white;
+}
+body.pc section.footer.footer div.onBlock > div p {
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  text-align: left;
+}
+body.pc section.footer.footer div.onBlock > div p.whatsApps::before {
+  background: url(../img/whatsapp.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body.pc section.footer.footer div.onBlock > div p.email::before {
+  background: url(../img/email.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body.pc section.footer.footer div.onBlock > div p::before {
+  content: "";
+  height: 25px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+body.pc section.footer.footer div.onBlock a.bglogo {
+  background-image: url(../img/bg_logo.png);
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  display: block;
+  width: 186px;
+  height: 57px;
+}
+
+button {
+  position: absolute;
+  animation: ripple 5s infinite;
+  border-radius: 100%;
+  border: none;
+  background-color: #eff2f500;
+  box-shadow: 0 -10px 20px #b812da, 0 10px 20px #b812da inset, 0 10px 20px #b812da, 0 -10px 20px #b812da inset;
+  transition: 0.33s ease-in all;
+  opacity: 0;
+  transform: scale(1, 0.5);
+}
+
+@keyframes ripple {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    width: 800px;
+    height: 400px;
+    opacity: 0;
+  }
+}
+@keyframes rippleH5 {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    width: 350px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+.bottom button:nth-child(1) {
+  animation-delay: 500ms;
+}
+
+.bottom button:nth-child(2) {
+  animation-delay: 1000ms;
+}
+
+.bottom button:nth-child(3) {
+  animation-delay: 1500ms;
+}
+
+.bottom button:nth-child(4) {
+  animation-delay: 2000ms;
+}
+
+.bottom button:nth-child(5) {
+  animation-delay: 2500ms;
+}
+
+/* -------------------------------------------------------- */
+body.h5 {
+  overflow: initial;
+}
+body.h5 header#Header {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 1000;
+  overflow: hidden;
+}
+body.h5 header#Header.active {
+  min-height: 100vh;
+  overflow: auto;
+}
+body.h5 header#Header .bglogo {
+  display: block;
+  height: 43px;
+  width: 150px;
+  background: url(../img/logo_W.png) no-repeat center;
+  background-size: contain;
+  z-index: 2;
+  transition: 0.3s;
+}
+body.h5 header#Header .bglogo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body.h5 header#Header .bglogo.change {
+  background: url(../img/bg_icon.png) no-repeat 0.3rem;
+  background-size: contain;
+  transition: 0.3s;
+}
+body.h5 header#Header .clint {
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  padding: 10px;
+  width: 44px;
+  height: 44px;
+  background: white;
+  border-radius: 0.7rem;
+  z-index: 2;
+}
+body.h5 header#Header .clint::before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 5px;
+  background-color: black;
+  transform: translateY(-0.25rem);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+body.h5 header#Header .clint::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 5px;
+  background-color: black;
+  transform: translateY(0.25rem);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+body.h5 header#Header .clint.active::before {
+  transform: rotate(-45deg) translate(-2px, 3px);
+}
+body.h5 header#Header .clint.active::after {
+  width: 26px;
+  transform: rotate(40deg) translate(2px, -3px);
+}
+body.h5 header#Header .rBlock {
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #5018CD;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  /* position: relative; */
+}
+body.h5 header#Header .rBlock.active {
+  opacity: 1;
+  visibility: inherit;
+  min-height: 100vh;
+  height: auto;
+  overflow: unset;
+  padding-bottom: 14vh;
+}
+body.h5 header#Header .rBlock .seachBlock {
+  order: 1;
+  width: 100vw;
+  min-height: 53px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+}
+body.h5 header#Header .rBlock .seachBlock.close > div {
+  background: none;
+}
+body.h5 header#Header .rBlock .seachBlock.close > div {
+  visibility: hidden;
+  opacity: 0;
+}
+body.h5 header#Header .rBlock .seachBlock > div {
+  background-color: white;
+  margin-top: 4rem;
+  width: 100%;
+  padding: 10px 30px;
+  position: relative;
+  visibility: unset;
+  opacity: 1;
+  transition: .3s;
+  z-index: 100;
+}
+body.h5 header#Header .rBlock .seachBlock > div > div{
+  position: absolute;
+  width: 60px;
+  min-height: 51px;
+  background: #DE3FD8;
+  bottom: 10px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.h5 header#Header .rBlock .seachBlock input {
+  outline: 2px solid rgb(255, 255, 255);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #7714CD;
+  min-height: 51px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 30px;
+  position: relative;
+}
+body.h5 header#Header .rBlock .seachBlock input:after{
+  content: 'GO';
+  display: block;
+  width: 40px;
+  height: 100%;
+  background: white;
+  position: absolute;
+  right: 0;
+}
+body.h5 header#Header .rBlock .seachBlock input::placeholder {
+  color: white;
+  text-align: left;
+  font-size: 15px;
+}
+body.h5 header#Header .rBlock .seachBlock i {
+  position: absolute;
+  background: url(../img/icon_search.svg)no-repeat center;
+  width: 2rem;
+  height: 2rem;
+  right: 65px;
+  top: 0;
+}
+body.h5 header#Header .rBlock .headerNav {
+  order: 2;
+  font-size: 20px;
+  /* margin-top: 1.5rem; */
+  width: 100%;
+}
+body.h5 header#Header .rBlock .headerNav li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .5s;
+  position: relative;
+}
+body.h5 header#Header .rBlock .headerNav li p{
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #9667FF ;
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  border-top: 1px solid #67dcff00;
+}
+body.h5 header#Header .rBlock .headerNav li.add p::after {
+  content: "";
+  display: block;
+  height: 0.8rem;
+  width: 0.8rem;
+  display: inline-block;
+  background: url(../img/icon_arrow_w2.png) no-repeat center;
+  margin-left: 0.5rem;
+  transition: 0.3s;
+  position: absolute;
+  right: 1.5rem;
+}
+body.h5 header#Header .rBlock .headerNav li p::before {
+  content: ''; /* 创建伪元素 */
+  position: absolute;
+  bottom: -5px;
+  margin: auto;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #9667FF;
+  transform: rotate(-45deg); /* 反向旋转45度，将伪元素旋转回来 */
+  transform-origin: 50% 50%; /* 设置旋转的中心点为正方形的中心 */
+  z-index: 3;
+}
+body.h5 header#Header .rBlock .headerNav li.add ul.navItem {
+  height: 100%;
+  font-size: 14px;
+  width: 100%;
+  max-height: 0px;
+  overflow: hidden;
+  transition: .3s;
+}
+body.h5 header#Header .rBlock .headerNav li.add ul.navItem li{
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #9667FF ;
+}
+body.h5 header#Header .rBlock .headerNav li.add.open p{
+  border-top: 1px solid #67DCFF;
+  overflow: hidden;
+}
+body.h5 header#Header .rBlock .headerNav li.add.open p::after {
+  background: url(../img/icon_arrow_w2-2.png) no-repeat center;
+}
+body.h5 header#Header .rBlock .headerNav li.add.open{
+  background: #7714CD;
+  max-height: 600px;
+  overflow: inherit;
+  border-bottom: 1px solid #67DCFF ;
+}
+body.h5 header#Header .rBlock .headerNav li.add.open ul.navItem {
+  max-height: 600px;
+}
+body.h5 header#Header .rBlock .lang {
+  order: 3;
+  width: 100%;
+  font-size: 20px;
+  border-bottom: 1px solid #9667FF;
+  transition: .3s;
+}
+body.h5 header#Header .rBlock .lang>span{
+  display: inline-flex;
+  height: 64px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+body.h5 header#Header .rBlock .lang>span::after {
+  content: "";
+  display: block;
+  height: 0.8rem;
+  width: 0.8rem;
+  display: inline-block;
+  background: url(../img/icon_arrow_w2.png) no-repeat center;
+  margin-left: 0.5rem;
+  transition: 0.3s;
+  position: absolute;
+  right: 1.5rem;
+}
+body.h5 header#Header .rBlock .lang .langMain {
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s;
+  font-size: 14px;
+}
+body.h5 header#Header .rBlock .lang .langMain li {
+  /* margin-top: 1.5rem; */
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #9667FF;
+}
+body.h5 header#Header .rBlock .lang .langMain li img{
+  margin-right: .5rem;
+}
+body.h5 header#Header .rBlock .lang.open>span::after {
+  content: "";
+  display: block;
+  height: 0.8rem;
+  width: 0.8rem;
+  display: inline-block;
+  background: url(../img/icon_arrow_w2-2.png) no-repeat center;
+  margin-left: 0.5rem;
+}
+body.h5 header#Header .rBlock .lang.open {
+  background: #7714CD;
+  border-bottom: 1px solid #67DCFF;
+}
+body.h5 header#Header .rBlock .lang.open>span{
+  border-top: 1px solid #67DCFF;
+  border-bottom: 1px solid #9667FF;
+}
+body.h5 header#Header .rBlock .lang.open .langMain {
+  max-height: 100rem;
+  font-size: 14px;
+}
+body.h5 section.one {
+  width: 100vw;
+  height: 90vh;
+  position: relative;
+}
+body.h5 section.one .scroollBtn {
+  position: absolute;
+  bottom: 2.5rem;
+  width: 47px;
+  height: 179px;
+  border: 2px solid white;
+  border-radius: 3rem;
+  background: url(../img/txt_Scroll.png) no-repeat center 3.5rem;
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
+}
+body.h5 section.one .scroollBtn:after {
+  content: "";
+  display: block;
+  background-color: white;
+  width: 0.5rem;
+  height: 0.5rem;
+  animation: slide-in 1.2s infinite;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  left: 1.02rem;
+}
+body.h5 section.one .swiper {
+  height: 100%;
+}
+body.h5 section.one .swiper .swiper-slide.a {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.h5 section.one .swiper .swiper-slide.a p {
+  font-size: 32px;
+  font-family: Arial, Bold;
+  font-style: Italic;
+  color: white;
+}
+body.h5 section.one .swiper .swiper-slide.b {
+  position: relative;
+  overflow: hidden;
+}
+body.h5 section.one .swiper .swiper-slide.b .model {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  justify-content: center;
+}
+body.h5 section.one .swiper .swiper-slide.b .model #c {
+  width: 90vw;
+  top: auto;
+  right: auto;
+  bottom: -20%;
+}
+body.h5 section.one .swiper .swiper-slide.b .model #d {
+  width: 80vw;
+  top: auto;
+  right: auto;
+  bottom: -2%;
+}
+body.h5 section.one .swiper .swiper-slide.b .model .g-container {
+  width: 80%;
+  height: 45%;
+  top: auto;
+  right: 1%;
+  bottom: 8%;
+}
+body.h5 section.one .swiper .swiper-slide.b .model .plate {
+  background: url(../img/img_roll.png) no-repeat center;
+  background-size: contain;
+  display: block;
+  width: 50%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+body.h5 section.one .swiper .swiper-slide.b .model .girl {
+  background: url(../img/img_girl.png) no-repeat center;
+  background-size: contain;
+  display: block;
+  width: 100vw;
+  height: 50%;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+}
+body.h5 section.one .swiper .swiper-slide.b .model .stand {
+  background: url(../img/img_stand.png) no-repeat center;
+  background-size: contain;
+  display: block;
+  height: 30%;
+  width: 40%;
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  z-index: 3;
+}
+body.h5 section.one .swiper .swiper-slide.b .model .Sic {
+  display: block;
+  width: 30%;
+  height: 10%;
+  position: absolute;
+  right: -2%;
+  bottom: 5%;
+}
+body.h5 section.one .swiper .swiper-slide.b .model .Sic .sic1 {
+  background: url(../img/img_sic01.png) center bottom no-repeat;
+  background-size: contain;
+  display: block;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  animation: floatAnimation 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+body.h5 section.one .swiper .swiper-slide.b .model .Sic .sic2 {
+  background: url(../img/img_sic02.png) center bottom no-repeat;
+  background-size: contain;
+  display: block;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 1.5rem;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+body.h5 section.one .swiper .swiper-slide.b .bannerText {
+  margin-top: 20%;
+  color: white;
+  width: 100%;
+  height: 35%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+body.h5 section.one .swiper .swiper-slide.b .bannerText p:first-child {
+  font-size: 20px;
+  font-weight: 600;
+}
+body.h5 section.one .swiper .swiper-slide.b .bannerText p:last-child {
+  font-size: 20px;
+  font-weight: 600;
+  word-spacing: 0.1rem;
+}
+body.h5 section.one .swiper .swiper-slide.b .bannerText div.sigma {
+  background: url(../img/sigma-europe-logo.png) no-repeat center;
+  background-size: contain;
+  display: block;
+  width: 100%;
+  height: 30%;
+}
+body.h5 section.one .swiper .swiper-pagination {
+  margin-bottom: 1rem;
+}
+body.h5 section.one .swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 3rem;
+  border-radius: 0;
+  margin: 0.5rem;
+  background: rgba(255, 255, 255, 0.5019607843);
+}
+body.h5 section.one .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #EC32B4;
+}
+body.h5 section.one section.two {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+body.h5 section.one section.two .bottom {
+  display: block;
+  width: 300px;
+  height: 300px;
+  background: url(../img/our_advantage_img.png) no-repeat center;
+  background-size: contain;
+  position: absolute;
+  top: 4rem;
+}
+body.h5 section.one section.two .bigBG {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: url(../img/our_advantage_bg_logo.png) no-repeat center;
+  background-size: contain;
+  position: absolute;
+  top: 6rem;
+}
+body.h5 section.one section.two .Block {
+  width: 100%;
+}
+body.h5 section.one section.two .Block > p.title {
+  margin-top: 1.5rem;
+  font-weight: 900;
+  font-size: 25px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+body.h5 section.one section.two .Block > p.title::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 5px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.h5 section.one section.two .Block > div.ourMain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  margin-top: 19rem;
+}
+body.h5 section.one section.two .Block > div.ourMain div {
+  margin: 0 auto 2rem;
+  width: 90%;
+  display: block;
+  opacity: 0;
+  background-color: #3498db;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0.98px -0.21px 29px rgba(221, 221, 221, 0.5098039216);
+  border-radius: 20px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+body.h5 section.one section.two .Block > div.ourMain div.a {
+  order: 1;
+}
+body.h5 section.one section.two .Block > div.ourMain div.b {
+  order: 4;
+}
+body.h5 section.one section.two .Block > div.ourMain div.c {
+  order: 2;
+}
+body.h5 section.one section.two .Block > div.ourMain div.d {
+  order: 5;
+}
+body.h5 section.one section.two .Block > div.ourMain div.e {
+  order: 6;
+}
+body.h5 section.one section.two .Block > div.ourMain div.f {
+  order: 3;
+}
+body.h5 section.one section.two .Block > div.ourMain div p:first-child {
+  position: relative;
+  padding-left: 2em;
+  font-size: 20px;
+  text-align: left;
+  width: 100%;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+body.h5 section.one section.two .Block > div.ourMain div p:last-child {
+  font-size: 12px;
+  text-align: left;
+}
+body.h5 section.one section.the {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+body.h5 section.one section.the .thrBack {
+  display: none;
+}
+body.h5 section.one section.the .Block {
+  width: 100%;
+}
+body.h5 section.one section.the .Block > p.title {
+  margin: auto 0.5rem 2rem;
+  font-weight: 900;
+  font-size: 25px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+body.h5 section.one section.the .Block > p.title::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 5px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.h5 section.one section.the .aBlock {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 9px rgba(221, 221, 221, 0.5098039216);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 5%;
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+body.h5 section.one section.the .aBlock::before {
+  display: block;
+  width: 100%;
+  height: 13rem;
+  content: "";
+  background: url(../img/img_service01.jpg) no-repeat;
+  background-size: cover;
+  background-position: -9.5rem top;
+  border-radius: 15px;
+}
+body.h5 section.one section.the .aBlock > div {
+  margin-top: 2rem;
+  height: 70%;
+  min-width: 50%;
+  padding: 3.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+body.h5 section.one section.the .aBlock > div p:first-child {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 1rem;
+}
+body.h5 section.one section.the .aBlock > div p:first-child::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.h5 section.one section.the .aBlock > div p:nth-child(2) {
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5%;
+}
+body.h5 section.one section.the .aBlock > div p:last-child {
+  margin-top: 3%;
+  font-weight: 800;
+  padding-right: 1rem;
+  position: relative;
+}
+body.h5 section.one section.the .aBlock > div p:last-child::before {
+  content: "";
+  background: url(../img/icon_arrow.png) no-repeat;
+  background-position: center;
+  width: 0.5rem;
+  height: 100%;
+  display: block;
+  position: absolute;
+  right: 0;
+}
+body.h5 section.one section.the .bBlock {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 9px rgba(221, 221, 221, 0.5098039216);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 5%;
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+body.h5 section.one section.the .bBlock::before {
+  display: block;
+  width: 100%;
+  height: 13rem;
+  content: "";
+  background: url(../img/img_service02.jpg) no-repeat;
+  background-size: cover;
+  background-position: -9.5rem top;
+  border-radius: 15px;
+}
+body.h5 section.one section.the .bBlock > div {
+  margin-top: 2rem;
+  height: 70%;
+  min-width: 50%;
+  padding: 3.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+body.h5 section.one section.the .bBlock > div p:first-child {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 1rem;
+}
+body.h5 section.one section.the .bBlock > div p:first-child::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.h5 section.one section.the .bBlock > div p:nth-child(2) {
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5%;
+}
+body.h5 section.one section.the .bBlock > div p:last-child {
+  margin-top: 3%;
+  font-weight: 800;
+  padding-right: 1rem;
+  position: relative;
+}
+body.h5 section.one section.the .bBlock > div p:last-child::before {
+  content: "";
+  background: url(../img/icon_arrow.png) no-repeat;
+  background-position: center;
+  width: 0.5rem;
+  height: 100%;
+  display: block;
+  position: absolute;
+  right: 0;
+}
+body.h5 section.one section.fur {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: url(../img/top_dots_01.svg) no-repeat;
+  background-size: 200%;
+  background-position: 10rem 22rem;
+  width: 100%;
+}
+body.h5 section.one section.fur .furBack {
+  display: none;
+}
+body.h5 section.one section.fur .furBack .dot {
+  background: url(../img/top_dots_01.svg) no-repeat;
+  width: 80%;
+  display: block;
+  position: absolute;
+  top: 30vh;
+  right: -14vw;
+}
+body.h5 section.one section.fur .Block {
+  width: 100%;
+  position: relative;
+}
+body.h5 section.one section.fur .Block > p.title {
+  margin: auto 0.5rem 2rem;
+  font-weight: 900;
+  font-size: 25px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+body.h5 section.one section.fur .Block > p.title::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 5px;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+}
+body.h5 section.one section.fur .Block .gamesBtn {
+  opacity: 0;
+  margin-top: 2rem;
+  width: 90%;
+  display: grid;
+  grid-template-rows: repeat(4, 147.5px);
+  /* 12行等高 */
+  grid-template-columns: 1fr 1fr;
+  /* 两列等宽 */
+  grid-gap: 20px;
+  /* 行列之间的间隔 */
+  place-items: center;
+  padding: 2%;
+  margin: 2rem auto;
+}
+body.h5 section.one section.fur .Block .gamesBtn div {
+  display: block;
+  width: 153.31px;
+  height: 293.57px;
+  border-radius: 30px;
+}
+body.h5 section.one section.fur .Block .gamesBtn div.btn-3 div {
+  padding: 20%;
+}
+body.h5 section.one section.fur .Block .gamesBtn div.btn-1 {
+  grid-row: 1/span 2;
+  grid-column: 1;
+}
+body.h5 section.one section.fur .Block .gamesBtn div.btn-2 {
+  grid-row: 2/span 2;
+  grid-column: 2;
+}
+body.h5 section.one section.fur .Block .gamesBtn div.btn-3 {
+  grid-row: 3/span 2;
+  grid-column: 1;
+}
+body.h5 section.one section.fur .Block .gamesBtn div.btn-4 {
+  grid-row: 4/span 2;
+  grid-column: 2;
+}
+body.h5 section.one section.fur .Block .gamesBtn div.btn-5 {
+  grid-row: 5/span 2;
+  grid-column: 1;
+}
+body.h5 section.one section.fur .Block .gamesBtn div div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.439);
+  color: white;
+  text-align: left;
+  font-weight: 600;
+  font-size: 20px;
+}
+body.h5 section.one section.fur .Block .gamesBtn div div span {
+  display: inline-block;
+  padding: 5px 1.5rem;
+  font-size: 14px;
+  border-radius: 3rem;
+  text-align: left;
+  background: transparent linear-gradient(90deg, #BA28E0 0%, #EC32B4 100%) 0% 0% no-repeat padding-box;
+  position: absolute;
+  bottom: 4rem;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+}
+body.h5 section.one section.fur .Block .gamesBtn div div span::after {
+  content: "";
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: url(../img/icon_arrow.png) center no-repeat;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(200deg) brightness(150%) contrast(112%);
+  margin-left: 0.5rem;
+}
+body.h5 section.one section.fur .Block .moreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  height: 10vh;
+  margin-bottom: 3rem;
+  background: white;
+  outline: 3px solid #DC2EC3;
+  border-radius: 3rem;
+  font-size: 20px;
+  color: #DC2EC3;
+}
+body.h5 section.one section.five {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+body.h5 section.one section.five .mainBlock {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body.h5 section.one section.five .mainBlock .mainBlock {
+  width: 100vw;
+}
+body.h5 section.one section.five .mainBlock .rightBlock {
+  opacity: 0;
+  border-radius: 20px;
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0.98px -0.21px 29px rgba(221, 221, 221, 0.5098039216);
+  position: relative;
+  padding: 1rem;
+}
+body.h5 section.one section.five .mainBlock .rightBlock p:first-child {
+  font-size: 32px;
+  text-align: left;
+  font-style: italic;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+body.h5 section.one section.five .mainBlock .rightBlock p:not(p:first-child):not(p:last-child) {
+  margin-bottom: 0.8rem;
+  font-size: 15px;
+  color: #6F6F6F;
+  text-align: left;
+  font-weight: 600;
+  min-width: 197px;
+  display: inline-block;
+}
+body.h5 section.one section.five .mainBlock .rightBlock p:not(p:first-child):not(p:last-child) span {
+  display: inline-flex;
+  color: gray;
+  width: calc(100% - 130px);
+  position: relative;
+  font-family: "Courier New", monospace;
+  font-weight: 800;
+}
+body.h5 section.one section.five .mainBlock .rightBlock p:not(p:first-child):not(p:last-child)::before {
+  content: "HOT";
+  color: white;
+  float: left;
+  font-size: 12px;
+  font-family: Arial Bold;
+  border-radius: 10px;
+  width: 95px;
+  height: 24px;
+  background-color: #f7118b;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 64px 0;
+}
+body.h5 section.one section.five .mainBlock .rightBlock p:last-child {
+  text-align: left;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+body.h5 section.one section.five .mainBlock .rightBlock p:last-child::after {
+  content: "";
+  width: 0.5rem;
+  display: block;
+  background: url(../img/icon_arrow.png) no-repeat center;
+  margin-left: 0.5rem;
+  transition: 0.3s;
+}
+body.h5 section.one section.five .mainBlock .leftBlock {
+  opacity: 0;
+  display: flex;
+  background-color: white;
+  box-shadow: 0.98px -0.21px 29px rgba(221, 221, 221, 0.5098039216);
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  justify-content: right;
+  align-items: center;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .bglogo {
+  display: block;
+  background: url(../img/logo_b.png) center no-repeat;
+  background-size: contain;
+  width: 10rem;
+  height: 4rem;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .X {
+  display: block;
+  background: url(../img/icon_x.png) center no-repeat;
+  width: 8rem;
+  height: 4rem;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-size: contain;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m1 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: -48px -226px;
+  width: 72px;
+  height: 49px;
+  -webkit-filter: grayscale(0.95);
+  order: 1;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m2 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: -116px -226px;
+  width: 72px;
+  height: 49px;
+  -webkit-filter: grayscale(0.95);
+  order: 2;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m3 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: 16px -286px;
+  width: 72px;
+  height: 49px;
+  -webkit-filter: grayscale(0.95);
+  order: 3;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m4 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: -44px -286px;
+  width: 72px;
+  height: 49px;
+  -webkit-filter: grayscale(0.95);
+  order: 4;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m5 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: 16px -353px;
+  width: 142px;
+  height: 49px;
+  -webkit-filter: grayscale(0.95);
+  order: 8;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m6 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: -109px -286px;
+  width: 72px;
+  height: 49px;
+  -webkit-filter: grayscale(0.95);
+  order: 5;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m7 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: -123px -351px;
+  width: 132px;
+  height: 49px;
+  -webkit-filter: grayscale(0.95);
+  order: 6;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m8 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: -174px -291px;
+  width: 6.5rem;
+  height: 48px;
+  -webkit-filter: grayscale(0.95);
+  order: 7;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS .m9 {
+  background: url(../img/footer_04.png) no-repeat;
+  background-position: 15px -410px;
+  width: 6.5rem;
+  height: 48px;
+  -webkit-filter: grayscale(0.95);
+  order: 9;
+}
+body.h5 section.one section.five .mainBlock .leftBlock .box .PARTNERS div {
+  display: block;
+}
+body.h5 section.one section.five .mainBlock .leftBlock p {
+  display: inline;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+body.h5 section.footer {
+  background-color: #363636;
+  padding: 1rem 32px;
+  color: white;
+}
+body.h5 section.footer .bgBlock .onBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 2rem;
+}
+body.h5 section.footer .bgBlock .onBlock a.bglogo {
+  display: inline-block;
+  min-height: 46.27px;
+  width: 100%;
+  background: url(../img/logo_W.png) no-repeat left;
+  background-size: contain;
+  margin-bottom: 1rem;
+}
+body.h5 section.footer .bgBlock .onBlock p {
+  text-decoration: none;
+  color: white;
+  margin: 1rem 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+body.h5  section.footer .bgBlock .onBlock p.whatsApps::before {
+  content: "";
+  background: url(../img/icon_whatsapp.png) no-repeat center;
+  background-size: contain;
+  display: block;
+  height: 17px;
+  width: 22px;
+  margin-right: 0.5rem;
+}
+body.h5  section.footer .bgBlock .onBlock p.email::before {
+  content: "";
+  background: url(../img/icon_email.png) no-repeat center;
+  background-size: 80%;
+  display: block;
+  height: 17px;
+  width: 22px;
+  margin-right: 0.5rem;
+}
+body.h5  section.footer .bgBlock .onBlock a.try {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
+body.h5  section.footer .bgBlock .twBlock .footerNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+}
+body.h5  section.footer .bgBlock .twBlock .footerNav li {
+  margin-bottom: 1rem;
+  display: flex;
+  padding-left: 1.5rem;
+  position: relative;
+}
+body.h5  section.footer .bgBlock .twBlock .footerNav li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 0.8rem;
+  background: url(../img/icon_arrow.png) no-repeat center;
+}
+body.h5  section.footer .bgBlock .twBlock .media {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+body.h5  section.footer .bgBlock .twBlock .media div {
+  padding: 10px 0;
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+  background:#535353;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+}
+body.h5  section.footer .bgBlock .twBlock .media div img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+}
+body.h5  section.footer .bgBlock .twBlock .media div span {
+  margin-left: 0.4rem;
+  font-weight: 800;
+  font-size: 14px;
+}
+body.h5  section.footer > p {
+  margin-bottom: 2rem;
+  font-size: 12px;
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.carousel .item {
+  display: block;
+  position: absolute;
+  width: 396px;
+  height: 370px;
+  line-height: 370px;
+  font-size: 5em;
+  text-align: center;
+  color: #FFF;
+  border-radius: 36px;
+  /* filter: brightness(0.4); */
+  transition: .5s;
+  overflow: hidden;
+}
+.carousel .item div.textBox{
+  height: 30%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, #000000 30%, #00000000);
+  z-index: 3;
+}
+.carousel .item div.textBox div.itime{
+  position: absolute;
+  left: 1rem;
+  font-size: 20px;
+  text-align: left;
+  color: #f351ec;
+  display: inline;
+  line-height: 1;
+}
+.carousel .item div.textBox div.ititle{
+  font-weight: bold;
+  font-family: Arial, sans-serif; /* 使用 Arial 字体作为首选字体 */
+  font-size: 30px;
+  display: inline;
+  position: absolute;
+  left: 1rem;
+  top: 20%;
+  text-align: left;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.carousel .item.light {
+  /* -webkit-filter: brightness(1) !important; */
+  /* filter: brightness(1) !important; */
+  animation: shadow2 2s infinite linear;
+  border: .3rem solid white;
+  padding: .3rem;
+}
+@media only screen and (max-width: 1440px) {
+  .carousel .item {
+    width: 315px;
+    height: 294px;
+    line-height: 294px;
+  }
+}
+.carousel .item  .darkbg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  top: 0;
+  left: 0;
+  opacity: .6;
+  transition: .3s;
+}
+.carousel .item.light  .darkbg{
+opacity: 0;
+}
+.carousel .a {
+  transform: rotateY(0deg) translateZ(396px);
+  background: url(../img/news/banner01.jpg) no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 1440px) {
+  .carousel .a {
+    transform: rotateY(0deg) translateZ(315px);
+  }
+}
+.carousel .b {
+  transform: rotateY(60deg) translateZ(396px);
+  background: url(../img/news/banner02.jpg) no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 1440px) {
+  .carousel .b {
+    transform: rotateY(60deg) translateZ(315px);
+  }
+}
+.carousel .c {
+  transform: rotateY(120deg) translateZ(396px);
+  background: url(../img/news/banner03.jpg) no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 1440px) {
+  .carousel .c {
+    transform: rotateY(120deg) translateZ(315px);
+  }
+}
+.carousel .d {
+  transform: rotateY(180deg) translateZ(396px);
+  background: url(../img/news/banner01.jpg) no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 1440px) {
+  .carousel .d {
+    transform: rotateY(180deg) translateZ(315px);
+  }
+}
+.carousel .e {
+  transform: rotateY(240deg) translateZ(396px);
+  background: url(../img/news/banner02.jpg) no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 1440px) {
+  .carousel .e {
+    transform: rotateY(240deg) translateZ(315px);
+  }
+}
+.carousel .f {
+  transform: rotateY(300deg) translateZ(396px);
+  background: url(../img/news/banner03.jpg) no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 1440px) {
+  .carousel .f {
+    transform: rotateY(300deg) translateZ(315px);
+  }
+}
+
+.next,
+.prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 88px;
+  height: 93px;
+  border-radius: 16px;
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to top, #11b0f6, #711cfa, #e852cd, #f81586, #fa0a7a);
+}
+.next:hover,
+.prev:hover {
+  box-shadow: 1px -0.2px 29px 0 rgba(222, 29, 166, 0.51);
+}
+
+.next {
+  margin-right: 50px;
+}
+@media only screen and (max-width: 1440px) {
+  .next {
+    margin-right: 80px;
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #3E1E68;
+  overflow: hidden;
+}
+
+.background span {
+  width: 42vmin;
+  height: 42vmin;
+  border-radius: 42vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 33;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.background span:nth-child(0) {
+  color: #360db7;
+  top: 23%;
+  left: 14%;
+  animation-duration: 16s;
+  animation-delay: -3s;
+  transform-origin: 13vw -4vh;
+  box-shadow: -84vmin 0 11.2649472231vmin currentColor;
+}
+
+.background span:nth-child(1) {
+  color: #2f67c8;
+  top: 79%;
+  left: 28%;
+  animation-duration: 45s;
+  animation-delay: -93s;
+  transform-origin: -8vw -5vh;
+  box-shadow: 84vmin 0 11.2114462292vmin currentColor;
+}
+
+.background span:nth-child(2) {
+  color: #360db7;
+  top: 53%;
+  left: 32%;
+  animation-duration: 144s;
+  animation-delay: -61s;
+  transform-origin: -4vw -14vh;
+  box-shadow: -84vmin 0 10.7847223409vmin currentColor;
+}
+
+.background span:nth-child(3) {
+  color: #316cd3;
+  top: 40%;
+  left: 53%;
+  animation-duration: 143s;
+  animation-delay: -7s;
+  transform-origin: 9vw -11vh;
+  box-shadow: 84vmin 0 11.2545849276vmin currentColor;
+}
+
+.background span:nth-child(4) {
+  color: #2f67c8;
+  top: 44%;
+  left: 54%;
+  animation-duration: 157s;
+  animation-delay: -51s;
+  transform-origin: 7vw -22vh;
+  box-shadow: -84vmin 0 10.6568114449vmin currentColor;
+}
+
+.background span:nth-child(5) {
+  color: #316cd3;
+  top: 60%;
+  left: 11%;
+  animation-duration: 46s;
+  animation-delay: -160s;
+  transform-origin: -17vw 4vh;
+  box-shadow: -84vmin 0 11.1237139884vmin currentColor;
+}
+
+.background span:nth-child(6) {
+  color: #316cd3;
+  top: 78%;
+  left: 22%;
+  animation-duration: 14s;
+  animation-delay: -166s;
+  transform-origin: -22vw -20vh;
+  box-shadow: 84vmin 0 10.8592015836vmin currentColor;
+}
+
+.background span:nth-child(7) {
+  color: #360db7;
+  top: 24%;
+  left: 61%;
+  animation-duration: 135s;
+  animation-delay: -156s;
+  transform-origin: 5vw 17vh;
+  box-shadow: -84vmin 0 10.5604315149vmin currentColor;
+}
+
+.background span:nth-child(8) {
+  color: #360db7;
+  top: 2%;
+  left: 92%;
+  animation-duration: 33s;
+  animation-delay: -115s;
+  transform-origin: 10vw 1vh;
+  box-shadow: 84vmin 0 10.9454390112vmin currentColor;
+}
+
+.background span:nth-child(9) {
+  color: #360db7;
+  top: 60%;
+  left: 63%;
+  animation-duration: 83s;
+  animation-delay: -123s;
+  transform-origin: -17vw -8vh;
+  box-shadow: -84vmin 0 11.1133123547vmin currentColor;
+}
+
+.background span:nth-child(10) {
+  color: #2f67c8;
+  top: 98%;
+  left: 47%;
+  animation-duration: 167s;
+  animation-delay: -44s;
+  transform-origin: 19vw 22vh;
+  box-shadow: -84vmin 0 11.074042254vmin currentColor;
+}
+
+.background span:nth-child(11) {
+  color: #360db7;
+  top: 65%;
+  left: 50%;
+  animation-duration: 113s;
+  animation-delay: -150s;
+  transform-origin: -22vw 8vh;
+  box-shadow: -84vmin 0 10.7481681802vmin currentColor;
+}
+
+.background span:nth-child(12) {
+  color: #2f67c8;
+  top: 21%;
+  left: 78%;
+  animation-duration: 49s;
+  animation-delay: -22s;
+  transform-origin: 15vw -10vh;
+  box-shadow: -84vmin 0 10.6796320295vmin currentColor;
+}
+.g-container {
+  position: absolute;
+  margin: auto;
+  width: 40rem;
+  height: 40rem;
+  transform: rotate(50deg);
+  animation: shadow 2s infinite linear;
+  right: 5rem;
+  top: 8rem;
+}
+
+.g-triangle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(50% 0%, 0% 96%, 6% 95%, 50% 13%, 91% 93%, 4% 92%, 0% 96%, 100% 99%);
+          clip-path: polygon(50% 0%, 0% 96%, 6% 95%, 50% 13%, 91% 93%, 4% 92%, 0% 96%, 100% 99%);
+  background: white;
+}
+
+.g-container-circle {
+  position: absolute;
+  margin: auto;
+  width: 35rem;
+  height: 35rem;
+  /* transform: rotate(50deg); */
+  animation: shadow 2s infinite linear;
+  right: 13rem;
+  top: 10rem;
+}
+
+.g-circle {
+  position: relative;
+  width: 100%;
+  /* Adjust the width and height as necessary */
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid white;
+  /* Adjust the border width and color as needed */
+  background: transparent;
+}
+@keyframes shadow2 {
+  0% {
+    filter: drop-shadow(0px 0px 10px hsl(162, 100%, 58%));
+  }
+  33% {
+    filter: drop-shadow(0px 0px 10px hsl(270, 73%, 53%));
+  }
+  66% {
+    filter: drop-shadow(0px 0px 10px hsl(270, 73%, 53%));
+  }
+  100% {
+    filter: drop-shadow(0px 0px 10px hsl(162, 100%, 58%));
+  }
+}
+
+@keyframes shadow {
+  0% {
+    filter: drop-shadow(-2px 8px 10px hsl(162, 100%, 58%));
+  }
+  33% {
+    filter: drop-shadow(-2px -12px 10px hsl(270, 73%, 53%));
+  }
+  66% {
+    filter: drop-shadow(8px 8px 10px hsl(270, 73%, 53%));
+  }
+  100% {
+    filter: drop-shadow(-2px 8px 10px hsl(162, 100%, 58%));
+  }
+}
+body {
+  color: #222;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+body.dontMove {
+  overflow: hidden !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.pc .ourMain > div > p.o-1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url(../img/icon_1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 100%;
+  margin-right: 1rem;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.h5 .ourMain > div > p.o-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/icon_1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.5rem;
+  height: 100%;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.pc .ourMain > div > p.o-2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url(../img/icon_2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 100%;
+  margin-right: 1rem;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.h5 .ourMain > div > p.o-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/icon_2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.5rem;
+  height: 100%;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.pc .ourMain > div > p.o-3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url(../img/icon_3.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 100%;
+  margin-right: 1rem;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.h5 .ourMain > div > p.o-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/icon_3.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.5rem;
+  height: 100%;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.pc .ourMain > div > p.o-4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url(../img/icon_4.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 100%;
+  margin-right: 1rem;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.h5 .ourMain > div > p.o-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/icon_4.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.5rem;
+  height: 100%;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.pc .ourMain > div > p.o-5::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url(../img/icon_5.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 100%;
+  margin-right: 1rem;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.h5 .ourMain > div > p.o-5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/icon_5.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.5rem;
+  height: 100%;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.pc .ourMain > div > p.o-6::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url(../img/icon_6.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 100%;
+  margin-right: 1rem;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.h5 .ourMain > div > p.o-6::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/icon_6.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.5rem;
+  height: 100%;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.pc .four > .Block > .gamesBtn .swiper-slide > .btn-1 {
+  background:url(../img/ourgames/casino/casino_bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.h5 .four > .Block > .gamesBtn .swiper-slide > .btn-1 {
+  background: url(../img/ourgames/casino/casino_bg.jpg) no-repeat center;
+  background-size: contain;
+}
+
+.pc .four > .Block > .gamesBtn .swiper-slide > .btn-2 {
+  background: url(../img/ourgames/poker/poker_bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.h5 .four > .Block > .gamesBtn .swiper-slide > .btn-2 {
+  background: url(../img/ourgames/poker/poker_bg.jpg) no-repeat center;
+  background-size: contain;
+}
+
+.pc .four > .Block > .gamesBtn .swiper-slide > .btn-3{
+  background:url(../img//ourgames/GalaxyTreasure/crystal.png)no-repeat bottom, url(../img/ourgames/GalaxyTreasure/Galaxy\ Treasure_bg.jpg) no-repeat center;
+  background-size: 100%, cover;
+}
+
+.h5 .four > .Block > .gamesBtn .swiper-slide > .btn-3 {
+  background:url(../img//ourgames/GalaxyTreasure/crystal.png)no-repeat bottom, url(../img/ourgames/GalaxyTreasure/Galaxy\ Treasure_bg.jpg) no-repeat center;
+  background-size:contain,cover !important;
+}
+
+.pc .four > .Block > .gamesBtn .swiper-slide > .btn-4 {
+  background: url(../img/ourgames/BgDaisenFishing/BG\ Daisen\ Fishing_bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.h5 .four > .Block > .gamesBtn .swiper-slide > .btn-4 {
+  background: url(../img/ourgames/BgDaisenFishing/BG\ Daisen\ Fishing_bg.jpg) no-repeat center;
+  background-size: contain;
+}
+
+.pc .four > .Block > .gamesBtn .swiper-slide > .btn-5 {
+  background: url(../img/ourgames/bgfishing/bgfishing_bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.h5 .four > .Block > .gamesBtn .swiper-slide > .btn-5 {
+  background: url(../img/ourgames/bgfishing/bgfishing_bg.jpg) no-repeat center;
+  background-size: contain;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+canvas {
+  position: absolute;
+}
+canvas#c {
+  top: -10.5rem;
+  right: 6rem;
+}
+canvas#d {
+  top: 1.5rem;
+  right: 12rem;
+}
+
+@keyframes floatAnimation2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes floatAnimation {
+  0%, 100%  {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-10px) translateX(10px);
+  }
+}
+@keyframes floatAnimationRE {
+  0%, 100%  {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateX(-10px) translateY(10px);
+  }
+}
+.kuang {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  overflow: hidden;
+}
+.kuang .bubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: inset 0 0 8px #1079e2;
+  animation: flutter 10s infinite;
+  opacity: 0;
+}
+
+@keyframes flutter {
+  0% {
+    transform: translateX(0);
+    bottom: -100px;
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0px);
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+.bubble:nth-child(1) {
+  left: -10%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 9s;
+  animation-delay: 0.1s;
+}
+
+.bubble:nth-child(2) {
+  left: 15%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 6s;
+  animation-delay: 1.5s;
+}
+
+.bubble:nth-child(3) {
+  left: 20%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 10s;
+}
+
+.bubble:nth-child(4) {
+  left: 30%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 5.5s;
+  animation-delay: 1.5s;
+}
+
+.bubble:nth-child(5) {
+  left: 40% x;
+  width: 50px;
+  height: 50px;
+  animation-duration: 12s;
+}
+
+.bubble:nth-child(6) {
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(7) {
+  left: 60%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 8s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(8) {
+  left: 65%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 15s;
+}
+
+.bubble:nth-child(9) {
+  left: 80%;
+  width: 55px;
+  height: 55px;
+  animation-duration: 9s;
+  animation-delay: 0.5s;
+}
+
+.bubble:nth-child(10) {
+  left: 100%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 12s;
+}
+
+#certify .swiper-slide {
+  width: 60vw;
+  /* height: auto;  */
+}
+
+#certify {
+  position: relative;
+  width: 80vw;
+}/*# sourceMappingURL=style.css.map */
+
+@keyframes move2 {
+  100% {
+      transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.lightPoint {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #cc0099;
+  overflow: hidden;
+}
+
+.lightPoint span {
+  width: 50vmin;
+  height: 50vmin;
+  border-radius: 50vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move2;
+  animation-duration: 23;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+ .lightPoint span:nth-child(0) {
+  color: #6600cc;
+  top: 60%;
+  left: 12%;
+  animation-duration: 179s;
+  animation-delay: -32s;
+  transform-origin: 5vw -16vh;
+  box-shadow: 100vmin 0 13.143094193342074vmin currentColor;
+}
+.lightPoint span:nth-child(1) {
+  color: #6600cc;
+  top: 3%;
+  left: 46%;
+  animation-duration: 68s;
+  animation-delay: -253s;
+  transform-origin: -14vw -23vh;
+  box-shadow: -100vmin 0 12.513382458301212vmin currentColor;
+}
+.lightPoint span:nth-child(2) {
+  color: #6600cc;
+  top: 51%;
+  left: 66%;
+  animation-duration: 118s;
+  animation-delay: -151s;
+  transform-origin: 19vw 24vh;
+  box-shadow: 100vmin 0 13.25726078851186vmin currentColor;
+}
+.lightPoint span:nth-child(3) {
+  color: #6600cc;
+  top: 9%;
+  left: 65%;
+  animation-duration: 131s;
+  animation-delay: -143s;
+  transform-origin: 10vw -23vh;
+  box-shadow: 100vmin 0 12.839069962065537vmin currentColor;
+}
+.lightPoint span:nth-child(4) {
+  color: #6600cc;
+  top: 100%;
+  left: 77%;
+  animation-duration: 155s;
+  animation-delay: -131s;
+  transform-origin: -23vw 24vh;
+  box-shadow: 100vmin 0 13.083645632315775vmin currentColor;
+}
+.lightPoint span:nth-child(5) {
+  color: #6600cc;
+  top: 92%;
+  left: 84%;
+  animation-duration: 99s;
+  animation-delay: -118s;
+  transform-origin: 2vw -10vh;
+  box-shadow: -100vmin 0 13.352511894135725vmin currentColor;
+}
+.lightPoint span:nth-child(6) {
+  color: #6600cc;
+  top: 15%;
+  left: 68%;
+  animation-duration: 168s;
+  animation-delay: -155s;
+  transform-origin: -7vw 24vh;
+  box-shadow: -100vmin 0 12.768357025981203vmin currentColor;
+}
+.lightPoint span:nth-child(7) {
+  color: #6600cc;
+  top: 5%;
+  left: 80%;
+  animation-duration: 217s;
+  animation-delay: -195s;
+  transform-origin: -1vw 22vh;
+  box-shadow: 100vmin 0 12.705503898483881vmin currentColor;
+}
+.lightPoint span:nth-child(8) {
+  color: #6600cc;
+  top: 16%;
+  left: 57%;
+  animation-duration: 48s;
+  animation-delay: -262s;
+  transform-origin: 4vw -13vh;
+  box-shadow: -100vmin 0 12.917719455487136vmin currentColor;
+}
+.lightPoint span:nth-child(9) {
+  color: #6600cc;
+  top: 61%;
+  left: 45%;
+  animation-duration: 129s;
+  animation-delay: -108s;
+  transform-origin: 10vw -3vh;
+  box-shadow: 100vmin 0 12.671667928670281vmin currentColor;
+}
+.lightPoint span:nth-child(10) {
+  color: #6600cc;
+  top: 53%;
+  left: 89%;
+  animation-duration: 19s;
+  animation-delay: -243s;
+  transform-origin: -2vw 5vh;
+  box-shadow: 100vmin 0 12.62968298973044vmin currentColor;
+}
+.lightPoint span:nth-child(11) {
+  color: #6600cc;
+  top: 50%;
+  left: 3%;
+  animation-duration: 113s;
+  animation-delay: -141s;
+  transform-origin: 10vw 14vh;
+  box-shadow: -100vmin 0 13.398819632971577vmin currentColor;
+}
+.lightPoint span:nth-child(12) {
+  color: #6600cc;
+  top: 8%;
+  left: 34%;
+  animation-duration: 40s;
+  animation-delay: -47s;
+  transform-origin: 1vw -7vh;
+  box-shadow: -100vmin 0 13.205630110277367vmin currentColor;
+}
